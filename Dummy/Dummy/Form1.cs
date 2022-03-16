@@ -21,6 +21,8 @@ namespace Dummy
         }
 
         App d = new App();
+        // BFS_Algo bfs_algo = new BFS_Algo(...);
+        // DFS_Algo dfs_algo = new DFS_Algo(...);
 
         private void pathBtn_Click(object sender, EventArgs e)
         {
