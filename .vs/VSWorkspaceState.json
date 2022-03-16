@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Dummy",
+    "\\Dummy\\Dummy"
   ],
-  "PreviewInSolutionExplorer": false
+  "SelectedNode": "\\Dummy\\Dummy\\bin",
+  "PreviewInSolutionExplorer": true
 }

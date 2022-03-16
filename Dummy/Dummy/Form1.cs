@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dummy.classes;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using System.IO;
 
 namespace Dummy
 {
@@ -54,10 +55,30 @@ namespace Dummy
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            // initialize folders & files name
+            string folders = "";
+            string files = "";
+
+            // Make a reference to a directory.
+            DirectoryInfo di = new DirectoryInfo(d.rootPath);
+
+            // Get a reference to each directory in that directory.
+            DirectoryInfo[] diArr = di.GetDirectories();
+            // Get a reference to each file in that directory.
+            FileInfo[] fiArr = di.GetFiles();
+
+            // store the names of the directories.
+            foreach (DirectoryInfo dri in diArr) { folders += dri.Name + "\n"; }
+            // store the names of the files.
+            foreach (FileInfo file in fiArr) { files += file.Name + "\n"; }
+
             MessageBox.Show($"root path: {d.rootPath}\n" +
                 $"file target: {d.fileTarget}\n" +
                 $"is all occurence: {d.isAllOccurence}\n" +
-                $"algorithm used: " + d.whichAlgo(d.isBFS));
+                $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
+                folders + "=== \n" +
+                files
+                );
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
