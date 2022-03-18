@@ -22,3 +22,28 @@ C:\Users\ravan\OneDrive - Institut Teknologi Bandung\Kuliah\Semester 4\IF2211 St
 C:\Users\ravan\OneDrive - Institut Teknologi Bandung\Kuliah\Semester 4\IF2211 Stima\tubes 2\Tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.csproj.CopyComplete
 C:\Users\ravan\OneDrive - Institut Teknologi Bandung\Kuliah\Semester 4\IF2211 Stima\tubes 2\Tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.exe
 C:\Users\ravan\OneDrive - Institut Teknologi Bandung\Kuliah\Semester 4\IF2211 Stima\tubes 2\Tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.pdb
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Dummy.exe.config
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Dummy.exe
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Dummy.pdb
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\AutomaticGraphLayout.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\AutomaticGraphLayout.Drawing.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.csproj.AssemblyReference.cache
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.csproj.SuggestedBindingRedirects.cache
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.Form1.resources
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.Properties.Resources.resources
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.csproj.GenerateResource.cache
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.csproj.CoreCompileInputs.cache
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.csproj.CopyComplete
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.exe
+C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.pdb
