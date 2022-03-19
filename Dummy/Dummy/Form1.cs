@@ -31,13 +31,14 @@ namespace Dummy
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 d.rootPath = dialog.FileName;
-                pathBox.Text = d.rootPath;
+                buttonChooseFolder.Text = d.rootPath;
             }
+            labelFolderChosen.Text = "Folder chosen!";
         }
 
         private void fileNameInput_TextChanged(object sender, EventArgs e)
         {
-            d.fileTarget = fileNameInput.Text;
+            d.fileTarget = textboxInputFilename.Text;
         }
 
         private void findAllCheck_CheckedChanged(object sender, EventArgs e)

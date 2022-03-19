@@ -29,286 +29,292 @@ namespace Dummy
         /// </summary>
         private void InitializeComponent()
         {
-            this.title = new System.Windows.Forms.TextBox();
-            this.inputTitle = new System.Windows.Forms.TextBox();
-            this.fileNameInput = new System.Windows.Forms.TextBox();
-            this.pathBtn = new System.Windows.Forms.Button();
-            this.pathBox = new System.Windows.Forms.TextBox();
-            this.findAllCheck = new System.Windows.Forms.CheckBox();
-            this.bfsBtn = new System.Windows.Forms.RadioButton();
-            this.dfsBtn = new System.Windows.Forms.RadioButton();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.panel2.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.textboxInputFilename = new System.Windows.Forms.TextBox();
+            this.buttonChooseFolder = new System.Windows.Forms.Button();
+            this.checkboxAllOccurence = new System.Windows.Forms.CheckBox();
+            this.buttonBFS = new System.Windows.Forms.RadioButton();
+            this.buttonDFS = new System.Windows.Forms.RadioButton();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.panelGraph = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelHeader = new System.Windows.Forms.Label();
+            this.labelSubheader = new System.Windows.Forms.Label();
+            this.pictureLogo = new System.Windows.Forms.PictureBox();
+            this.labelInput = new System.Windows.Forms.Label();
+            this.labelOutput = new System.Windows.Forms.Label();
+            this.labelChooseFolder = new System.Windows.Forms.Label();
+            this.labelFolderChosen = new System.Windows.Forms.Label();
+            this.labelInputFilename = new System.Windows.Forms.Label();
+            this.labelSearchMethod = new System.Windows.Forms.Label();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // title
+            // textboxInputFilename
             // 
-            this.title.BackColor = System.Drawing.Color.RoyalBlue;
-            this.title.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.title.Cursor = System.Windows.Forms.Cursors.Default;
-            this.title.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.title.Location = new System.Drawing.Point(37, 16);
-            this.title.Multiline = true;
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            this.title.Size = new System.Drawing.Size(205, 42);
-            this.title.TabIndex = 0;
-            this.title.Text = "search.me";
+            this.textboxInputFilename.AccessibleDescription = "";
+            this.textboxInputFilename.BackColor = System.Drawing.Color.White;
+            this.textboxInputFilename.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textboxInputFilename.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxInputFilename.Location = new System.Drawing.Point(45, 272);
+            this.textboxInputFilename.Multiline = true;
+            this.textboxInputFilename.Name = "textboxInputFilename";
+            this.textboxInputFilename.Size = new System.Drawing.Size(311, 25);
+            this.textboxInputFilename.TabIndex = 0;
+            this.textboxInputFilename.WordWrap = false;
+            this.textboxInputFilename.TextChanged += new System.EventHandler(this.fileNameInput_TextChanged);
             // 
-            // inputTitle
+            // buttonChooseFolder
             // 
-            this.inputTitle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputTitle.Cursor = System.Windows.Forms.Cursors.Default;
-            this.inputTitle.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTitle.Location = new System.Drawing.Point(45, 128);
-            this.inputTitle.Name = "inputTitle";
-            this.inputTitle.ReadOnly = true;
-            this.inputTitle.Size = new System.Drawing.Size(92, 23);
-            this.inputTitle.TabIndex = 0;
-            this.inputTitle.Text = "Input";
+            this.buttonChooseFolder.BackColor = System.Drawing.Color.Transparent;
+            this.buttonChooseFolder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChooseFolder.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChooseFolder.Location = new System.Drawing.Point(45, 190);
+            this.buttonChooseFolder.Name = "buttonChooseFolder";
+            this.buttonChooseFolder.Size = new System.Drawing.Size(138, 34);
+            this.buttonChooseFolder.TabIndex = 1;
+            this.buttonChooseFolder.Text = "Choose Folder...";
+            this.buttonChooseFolder.UseVisualStyleBackColor = false;
+            this.buttonChooseFolder.Click += new System.EventHandler(this.pathBtn_Click);
             // 
-            // fileNameInput
+            // checkboxAllOccurence
             // 
-            this.fileNameInput.AccessibleDescription = "";
-            this.fileNameInput.BackColor = System.Drawing.Color.White;
-            this.fileNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fileNameInput.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileNameInput.Location = new System.Drawing.Point(45, 272);
-            this.fileNameInput.Multiline = true;
-            this.fileNameInput.Name = "fileNameInput";
-            this.fileNameInput.Size = new System.Drawing.Size(311, 25);
-            this.fileNameInput.TabIndex = 0;
-            this.fileNameInput.WordWrap = false;
-            this.fileNameInput.TextChanged += new System.EventHandler(this.fileNameInput_TextChanged);
+            this.checkboxAllOccurence.AutoSize = true;
+            this.checkboxAllOccurence.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkboxAllOccurence.ForeColor = System.Drawing.Color.Black;
+            this.checkboxAllOccurence.Location = new System.Drawing.Point(45, 303);
+            this.checkboxAllOccurence.Name = "checkboxAllOccurence";
+            this.checkboxAllOccurence.Size = new System.Drawing.Size(150, 22);
+            this.checkboxAllOccurence.TabIndex = 2;
+            this.checkboxAllOccurence.Text = "Find all occurence";
+            this.checkboxAllOccurence.UseVisualStyleBackColor = true;
+            this.checkboxAllOccurence.CheckedChanged += new System.EventHandler(this.findAllCheck_CheckedChanged);
             // 
-            // pathBtn
+            // buttonBFS
             // 
-            this.pathBtn.BackColor = System.Drawing.Color.Transparent;
-            this.pathBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pathBtn.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pathBtn.Location = new System.Drawing.Point(45, 190);
-            this.pathBtn.Name = "pathBtn";
-            this.pathBtn.Size = new System.Drawing.Size(138, 34);
-            this.pathBtn.TabIndex = 1;
-            this.pathBtn.Text = "Choose Folder...";
-            this.pathBtn.UseVisualStyleBackColor = false;
-            this.pathBtn.Click += new System.EventHandler(this.pathBtn_Click);
+            this.buttonBFS.AutoSize = true;
+            this.buttonBFS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBFS.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBFS.ForeColor = System.Drawing.Color.Black;
+            this.buttonBFS.Location = new System.Drawing.Point(45, 372);
+            this.buttonBFS.Name = "buttonBFS";
+            this.buttonBFS.Size = new System.Drawing.Size(55, 22);
+            this.buttonBFS.TabIndex = 3;
+            this.buttonBFS.TabStop = true;
+            this.buttonBFS.Text = "BFS";
+            this.buttonBFS.UseVisualStyleBackColor = true;
+            this.buttonBFS.CheckedChanged += new System.EventHandler(this.bfsBtn_CheckedChanged);
             // 
-            // pathBox
+            // buttonDFS
             // 
-            this.pathBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pathBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pathBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pathBox.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pathBox.Location = new System.Drawing.Point(189, 198);
-            this.pathBox.Name = "pathBox";
-            this.pathBox.ReadOnly = true;
-            this.pathBox.Size = new System.Drawing.Size(167, 16);
-            this.pathBox.TabIndex = 0;
-            this.pathBox.Text = "No File Choosen";
+            this.buttonDFS.AutoSize = true;
+            this.buttonDFS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDFS.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDFS.ForeColor = System.Drawing.Color.Black;
+            this.buttonDFS.Location = new System.Drawing.Point(128, 372);
+            this.buttonDFS.Name = "buttonDFS";
+            this.buttonDFS.Size = new System.Drawing.Size(56, 22);
+            this.buttonDFS.TabIndex = 3;
+            this.buttonDFS.TabStop = true;
+            this.buttonDFS.Text = "DFS";
+            this.buttonDFS.UseVisualStyleBackColor = true;
+            this.buttonDFS.CheckedChanged += new System.EventHandler(this.dfsBtn_CheckedChanged);
             // 
-            // findAllCheck
+            // buttonSearch
             // 
-            this.findAllCheck.AutoSize = true;
-            this.findAllCheck.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findAllCheck.ForeColor = System.Drawing.Color.Black;
-            this.findAllCheck.Location = new System.Drawing.Point(45, 303);
-            this.findAllCheck.Name = "findAllCheck";
-            this.findAllCheck.Size = new System.Drawing.Size(150, 22);
-            this.findAllCheck.TabIndex = 2;
-            this.findAllCheck.Text = "Find all occurence";
-            this.findAllCheck.UseVisualStyleBackColor = true;
-            this.findAllCheck.CheckedChanged += new System.EventHandler(this.findAllCheck_CheckedChanged);
+            this.buttonSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(45, 419);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(138, 52);
+            this.buttonSearch.TabIndex = 4;
+            this.buttonSearch.Text = "search!";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // bfsBtn
+            // panelGraph
             // 
-            this.bfsBtn.AutoSize = true;
-            this.bfsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bfsBtn.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bfsBtn.ForeColor = System.Drawing.Color.Black;
-            this.bfsBtn.Location = new System.Drawing.Point(45, 372);
-            this.bfsBtn.Name = "bfsBtn";
-            this.bfsBtn.Size = new System.Drawing.Size(55, 22);
-            this.bfsBtn.TabIndex = 3;
-            this.bfsBtn.TabStop = true;
-            this.bfsBtn.Text = "BFS";
-            this.bfsBtn.UseVisualStyleBackColor = true;
-            this.bfsBtn.CheckedChanged += new System.EventHandler(this.bfsBtn_CheckedChanged);
+            this.panelGraph.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelGraph.BackColor = System.Drawing.Color.Silver;
+            this.panelGraph.Location = new System.Drawing.Point(439, 166);
+            this.panelGraph.Name = "panelGraph";
+            this.panelGraph.Size = new System.Drawing.Size(543, 427);
+            this.panelGraph.TabIndex = 6;
+            this.panelGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dfsBtn
+            // panelHeader
             // 
-            this.dfsBtn.AutoSize = true;
-            this.dfsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dfsBtn.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dfsBtn.ForeColor = System.Drawing.Color.Black;
-            this.dfsBtn.Location = new System.Drawing.Point(128, 372);
-            this.dfsBtn.Name = "dfsBtn";
-            this.dfsBtn.Size = new System.Drawing.Size(56, 22);
-            this.dfsBtn.TabIndex = 3;
-            this.dfsBtn.TabStop = true;
-            this.dfsBtn.Text = "DFS";
-            this.dfsBtn.UseVisualStyleBackColor = true;
-            this.dfsBtn.CheckedChanged += new System.EventHandler(this.dfsBtn_CheckedChanged);
+            this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelHeader.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelHeader.Controls.Add(this.pictureLogo);
+            this.panelHeader.Controls.Add(this.labelSubheader);
+            this.panelHeader.Controls.Add(this.labelHeader);
+            this.panelHeader.Location = new System.Drawing.Point(-1, -4);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1086, 90);
+            this.panelHeader.TabIndex = 11;
             // 
-            // searchBtn
+            // labelHeader
             // 
-            this.searchBtn.BackColor = System.Drawing.Color.RoyalBlue;
-            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchBtn.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(45, 419);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(138, 52);
-            this.searchBtn.TabIndex = 4;
-            this.searchBtn.Text = "search!";
-            this.searchBtn.UseVisualStyleBackColor = false;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            this.labelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.BackColor = System.Drawing.Color.Transparent;
+            this.labelHeader.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.labelHeader.Location = new System.Drawing.Point(39, 15);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(169, 39);
+            this.labelHeader.TabIndex = 12;
+            this.labelHeader.Text = "search.me";
             // 
-            // panel1
+            // labelSubheader
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(439, 166);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(443, 305);
-            this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.labelSubheader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSubheader.AutoSize = true;
+            this.labelSubheader.BackColor = System.Drawing.Color.Transparent;
+            this.labelSubheader.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSubheader.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.labelSubheader.Location = new System.Drawing.Point(42, 48);
+            this.labelSubheader.Name = "labelSubheader";
+            this.labelSubheader.Size = new System.Drawing.Size(343, 21);
+            this.labelSubheader.TabIndex = 12;
+            this.labelSubheader.Text = "ready to search your file as fast as the wind";
             // 
-            // textBox1
+            // pictureLogo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.textBox1.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(439, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(92, 23);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Output";
+            this.pictureLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
+            this.pictureLogo.Location = new System.Drawing.Point(979, 20);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(51, 53);
+            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureLogo.TabIndex = 13;
+            this.pictureLogo.TabStop = false;
             // 
-            // textBox2
+            // labelInput
             // 
-            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(45, 166);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(314, 26);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "Choose starting directory";
+            this.labelInput.AutoSize = true;
+            this.labelInput.BackColor = System.Drawing.Color.Transparent;
+            this.labelInput.Font = new System.Drawing.Font("Montserrat Medium", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInput.Location = new System.Drawing.Point(40, 126);
+            this.labelInput.Name = "labelInput";
+            this.labelInput.Size = new System.Drawing.Size(61, 25);
+            this.labelInput.TabIndex = 12;
+            this.labelInput.Text = "Input";
             // 
-            // textBox3
+            // labelOutput
             // 
-            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(45, 245);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(314, 26);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "Input file name";
+            this.labelOutput.AutoSize = true;
+            this.labelOutput.BackColor = System.Drawing.Color.Transparent;
+            this.labelOutput.Font = new System.Drawing.Font("Montserrat Medium", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOutput.Location = new System.Drawing.Point(434, 126);
+            this.labelOutput.Name = "labelOutput";
+            this.labelOutput.Size = new System.Drawing.Size(77, 25);
+            this.labelOutput.TabIndex = 13;
+            this.labelOutput.Text = "Output";
             // 
-            // textBox4
+            // labelChooseFolder
             // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(45, 347);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(314, 26);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.Text = "Searching method";
+            this.labelChooseFolder.AutoSize = true;
+            this.labelChooseFolder.BackColor = System.Drawing.Color.Transparent;
+            this.labelChooseFolder.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChooseFolder.Location = new System.Drawing.Point(41, 166);
+            this.labelChooseFolder.Name = "labelChooseFolder";
+            this.labelChooseFolder.Size = new System.Drawing.Size(211, 21);
+            this.labelChooseFolder.TabIndex = 14;
+            this.labelChooseFolder.Text = "Choose your starting folder";
             // 
-            // panel2
+            // labelFolderChosen
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.title);
-            this.panel2.Location = new System.Drawing.Point(-1, -4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(951, 88);
-            this.panel2.TabIndex = 11;
+            this.labelFolderChosen.AutoSize = true;
+            this.labelFolderChosen.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFolderChosen.Location = new System.Drawing.Point(189, 198);
+            this.labelFolderChosen.Name = "labelFolderChosen";
+            this.labelFolderChosen.Size = new System.Drawing.Size(126, 18);
+            this.labelFolderChosen.TabIndex = 15;
+            this.labelFolderChosen.Text = "No folder choosen";
             // 
-            // textBox5
+            // labelInputFilename
             // 
-            this.textBox5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox5.Location = new System.Drawing.Point(37, 48);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(376, 24);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.Text = "ready to search your file as fast as the wind";
+            this.labelInputFilename.AutoSize = true;
+            this.labelInputFilename.BackColor = System.Drawing.Color.Transparent;
+            this.labelInputFilename.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInputFilename.Location = new System.Drawing.Point(41, 248);
+            this.labelInputFilename.Name = "labelInputFilename";
+            this.labelInputFilename.Size = new System.Drawing.Size(126, 21);
+            this.labelInputFilename.TabIndex = 16;
+            this.labelInputFilename.Text = "Input file name";
+            // 
+            // labelSearchMethod
+            // 
+            this.labelSearchMethod.AutoSize = true;
+            this.labelSearchMethod.BackColor = System.Drawing.Color.Transparent;
+            this.labelSearchMethod.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchMethod.Location = new System.Drawing.Point(41, 348);
+            this.labelSearchMethod.Name = "labelSearchMethod";
+            this.labelSearchMethod.Size = new System.Drawing.Size(149, 21);
+            this.labelSearchMethod.TabIndex = 17;
+            this.labelSearchMethod.Text = "Searching method";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(941, 534);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.searchBtn);
-            this.Controls.Add(this.dfsBtn);
-            this.Controls.Add(this.bfsBtn);
-            this.Controls.Add(this.findAllCheck);
-            this.Controls.Add(this.pathBtn);
-            this.Controls.Add(this.fileNameInput);
-            this.Controls.Add(this.pathBox);
-            this.Controls.Add(this.inputTitle);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.Controls.Add(this.labelSearchMethod);
+            this.Controls.Add(this.labelInputFilename);
+            this.Controls.Add(this.labelFolderChosen);
+            this.Controls.Add(this.labelChooseFolder);
+            this.Controls.Add(this.labelOutput);
+            this.Controls.Add(this.labelInput);
+            this.Controls.Add(this.panelGraph);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.buttonDFS);
+            this.Controls.Add(this.buttonBFS);
+            this.Controls.Add(this.checkboxAllOccurence);
+            this.Controls.Add(this.buttonChooseFolder);
+            this.Controls.Add(this.textboxInputFilename);
+            this.Controls.Add(this.panelHeader);
+            this.MinimumSize = new System.Drawing.Size(900, 550);
             this.Name = "Form1";
-            this.Text = "Dummy";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Text = "search.me";
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox title;
-        private System.Windows.Forms.TextBox inputTitle;
-        private System.Windows.Forms.TextBox fileNameInput;
-        private System.Windows.Forms.Button pathBtn;
-        private System.Windows.Forms.TextBox pathBox;
-        private System.Windows.Forms.CheckBox findAllCheck;
-        private System.Windows.Forms.RadioButton bfsBtn;
-        private System.Windows.Forms.RadioButton dfsBtn;
-        private System.Windows.Forms.Button searchBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textboxInputFilename;
+        private System.Windows.Forms.Button buttonChooseFolder;
+        private System.Windows.Forms.CheckBox checkboxAllOccurence;
+        private System.Windows.Forms.RadioButton buttonBFS;
+        private System.Windows.Forms.RadioButton buttonDFS;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Panel panelGraph;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.PictureBox pictureLogo;
+        private System.Windows.Forms.Label labelSubheader;
+        private System.Windows.Forms.Label labelHeader;
+        private System.Windows.Forms.Label labelInput;
+        private System.Windows.Forms.Label labelOutput;
+        private System.Windows.Forms.Label labelChooseFolder;
+        private System.Windows.Forms.Label labelFolderChosen;
+        private System.Windows.Forms.Label labelInputFilename;
+        private System.Windows.Forms.Label labelSearchMethod;
     }
 }
 
