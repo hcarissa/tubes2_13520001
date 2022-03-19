@@ -38,15 +38,16 @@ namespace Dummy
             this.buttonSearch = new System.Windows.Forms.Button();
             this.panelGraph = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.labelHeader = new System.Windows.Forms.Label();
-            this.labelSubheader = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
+            this.labelSubheader = new System.Windows.Forms.Label();
+            this.labelHeader = new System.Windows.Forms.Label();
             this.labelInput = new System.Windows.Forms.Label();
             this.labelOutput = new System.Windows.Forms.Label();
             this.labelChooseFolder = new System.Windows.Forms.Label();
             this.labelFolderChosen = new System.Windows.Forms.Label();
             this.labelInputFilename = new System.Windows.Forms.Label();
             this.labelSearchMethod = new System.Windows.Forms.Label();
+            this.buttonGraphTrial = new System.Windows.Forms.Button();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
@@ -160,20 +161,17 @@ namespace Dummy
             this.panelHeader.Size = new System.Drawing.Size(1086, 90);
             this.panelHeader.TabIndex = 11;
             // 
-            // labelHeader
+            // pictureLogo
             // 
-            this.labelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelHeader.AutoSize = true;
-            this.labelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelHeader.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.labelHeader.Location = new System.Drawing.Point(39, 15);
-            this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(169, 39);
-            this.labelHeader.TabIndex = 12;
-            this.labelHeader.Text = "search.me";
+            this.pictureLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
+            this.pictureLogo.Location = new System.Drawing.Point(979, 20);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(51, 53);
+            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureLogo.TabIndex = 13;
+            this.pictureLogo.TabStop = false;
             // 
             // labelSubheader
             // 
@@ -190,17 +188,20 @@ namespace Dummy
             this.labelSubheader.TabIndex = 12;
             this.labelSubheader.Text = "ready to search your file as fast as the wind";
             // 
-            // pictureLogo
+            // labelHeader
             // 
-            this.pictureLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
-            this.pictureLogo.Location = new System.Drawing.Point(979, 20);
-            this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(51, 53);
-            this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureLogo.TabIndex = 13;
-            this.pictureLogo.TabStop = false;
+            this.labelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.BackColor = System.Drawing.Color.Transparent;
+            this.labelHeader.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.labelHeader.Location = new System.Drawing.Point(39, 15);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(169, 39);
+            this.labelHeader.TabIndex = 12;
+            this.labelHeader.Text = "search.me";
             // 
             // labelInput
             // 
@@ -267,11 +268,22 @@ namespace Dummy
             this.labelSearchMethod.TabIndex = 17;
             this.labelSearchMethod.Text = "Searching method";
             // 
+            // buttonGraphTrial
+            // 
+            this.buttonGraphTrial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGraphTrial.Location = new System.Drawing.Point(252, 429);
+            this.buttonGraphTrial.Name = "buttonGraphTrial";
+            this.buttonGraphTrial.Size = new System.Drawing.Size(132, 36);
+            this.buttonGraphTrial.TabIndex = 18;
+            this.buttonGraphTrial.Text = "coba graf ngab";
+            this.buttonGraphTrial.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.Controls.Add(this.buttonGraphTrial);
             this.Controls.Add(this.labelSearchMethod);
             this.Controls.Add(this.labelInputFilename);
             this.Controls.Add(this.labelFolderChosen);
@@ -286,6 +298,7 @@ namespace Dummy
             this.Controls.Add(this.buttonChooseFolder);
             this.Controls.Add(this.textboxInputFilename);
             this.Controls.Add(this.panelHeader);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 550);
             this.Name = "Form1";
             this.Text = "search.me";
@@ -315,6 +328,8 @@ namespace Dummy
         private System.Windows.Forms.Label labelFolderChosen;
         private System.Windows.Forms.Label labelInputFilename;
         private System.Windows.Forms.Label labelSearchMethod;
+        private System.Windows.Forms.Button buttonGraphTrial;
+
     }
 }
 
