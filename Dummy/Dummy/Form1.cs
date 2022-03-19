@@ -58,9 +58,18 @@ namespace Dummy
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            // TESTING BFS
+            BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget);
+            bool isFound = bfs_algo.findOccurence();
+            int count = bfs_algo.visited.Count;
+            String visitedPath = "";
+            String finalPath = "empty";
+            for (int i = 0; i < count; i++) { visitedPath += bfs_algo.visited.Dequeue() + "\n"; }
+            if (isFound)                    { finalPath = bfs_algo.finalPath.Peek(); }
+
             // initialize folders & files name
             string folders = "";
-            string files = "";
+            // string files = "";
 
             // Make a reference to a directory.
             DirectoryInfo di = new DirectoryInfo(d.rootPath);
@@ -68,19 +77,23 @@ namespace Dummy
             // Get a reference to each directory in that directory.
             DirectoryInfo[] diArr = di.GetDirectories();
             // Get a reference to each file in that directory.
-            FileInfo[] fiArr = di.GetFiles();
+            // FileInfo[] fiArr = di.GetFiles();
 
             // store the names of the directories.
-            foreach (DirectoryInfo dri in diArr) { folders += dri.Name + "\n"; }
+            // foreach (DirectoryInfo dri in diArr) { folders += dri.Name + "\n"; }
             // store the names of the files.
-            foreach (FileInfo file in fiArr) { files += file.Name + "\n"; }
+            // foreach (FileInfo file in fiArr) { files += file.Name + "\n"; }
 
-            MessageBox.Show($"root path: {d.rootPath}\n" +
-                $"file target: {d.fileTarget}\n" +
-                $"is all occurence: {d.isAllOccurence}\n" +
-                $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
-                folders + "=== \n" +
-                files
+            MessageBox.Show($"root path: {d.rootPath}\n"  +
+                   // $"file target: {d.fileTarget}\n" +
+                   // $"is all occurence: {d.isAllOccurence}\n" +
+                   // $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
+                   //folders + "=== \n" +
+
+                    // DRIVER TESTING BFS
+                    $"Visited path: {count}\n{visitedPath}\n" +
+                    $"Final path: {finalPath}\n" +
+                    $"Found is: {isFound}\n"
                 );
         }
 
