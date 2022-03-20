@@ -58,7 +58,7 @@ namespace Dummy
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            // TESTING BFS
+            // TESTING BFS Algorithm
             BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget);
             bool isFound = bfs_algo.findOccurence();
             int count = bfs_algo.visited.Count;
