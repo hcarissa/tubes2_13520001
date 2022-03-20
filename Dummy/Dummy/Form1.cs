@@ -43,7 +43,14 @@ namespace Dummy
 
         private void findAllCheck_CheckedChanged(object sender, EventArgs e)
         {
-            d.isAllOccurence = true;
+            if(d.isAllOccurence == false)
+            {
+                d.isAllOccurence = true;
+            }
+            else
+            {
+                d.isAllOccurence = false;
+            }
         }
 
         private void bfsBtn_CheckedChanged(object sender, EventArgs e)

@@ -29,64 +29,64 @@ namespace Dummy.classes
         {
             DirectoryInfo di = new DirectoryInfo(curDir);
             FileInfo[] fileArray = di.GetFiles();
+            bool found = false;
             foreach (FileInfo file in fileArray)
             {
                 // jika ada, mengembalikan true
                 string fileName = Convert.ToString(file);
-
-                // check if filename is same as the searched one
                 if (fileName.Equals(FileTarget))
                 {
-                    // if same add to finalpath
                     finalPath.Enqueue(curDir +"\\"+ fileName);
-                    return true;
+                    if (findAllOccurence)
+                    {
+                        found = true;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
                 else
                 {
-                    //if not, add to visited folders
                     visitedFolders.Enqueue(curDir +"\\"+ fileName);
                 }
             }
-            return false;
+            return found;
         }
 
-        // main DFS search
+
         public bool DFS_search(string path)
         {
             visitedFolders.Enqueue(path);
             bool found = false;
             DirectoryInfo dir = new DirectoryInfo(path);
             DirectoryInfo[] dirArray = dir.GetDirectories();
-            // if find all occurence
             if (findAllOccurence)
             {
-                // check on the path
                 if (isFileHere(path))
                 {
                     found = true;
                 }
-                else // if not on path
+                else
                 {
-                    // check for every directory
                     foreach (DirectoryInfo dirs in dirArray)
                     {
                         found = DFS_search(path + "\\" + dirs.ToString());
                     }
                 }
             }
-            else // if not find all occurence
+            else
             {
-                if (isFileHere(path)) // check on path
+                if (isFileHere(path))
                 {
                     found = true;
                 }
-                else // if not found on path
+                else
                 {
-                    // check in directory
                     foreach (DirectoryInfo dirs in dirArray)
                     {
                         found = DFS_search(path + "\\" + dirs.ToString());
-                        if (found) //if found, directly return true
+                        if (found)
                         {
                             return true;
                         }
