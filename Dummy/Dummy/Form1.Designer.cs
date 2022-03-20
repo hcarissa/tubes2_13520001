@@ -36,7 +36,6 @@ namespace Dummy
             this.buttonBFS = new System.Windows.Forms.RadioButton();
             this.buttonDFS = new System.Windows.Forms.RadioButton();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.panelGraph = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.labelSubheader = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@ namespace Dummy
             this.labelInputFilename = new System.Windows.Forms.Label();
             this.labelSearchMethod = new System.Windows.Forms.Label();
             this.buttonGraphTrial = new System.Windows.Forms.Button();
+            this.graphPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
@@ -136,18 +136,6 @@ namespace Dummy
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // panelGraph
-            // 
-            this.panelGraph.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelGraph.BackColor = System.Drawing.Color.Silver;
-            this.panelGraph.Location = new System.Drawing.Point(439, 166);
-            this.panelGraph.Name = "panelGraph";
-            this.panelGraph.Size = new System.Drawing.Size(543, 427);
-            this.panelGraph.TabIndex = 6;
-            this.panelGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // panelHeader
             // 
             this.panelHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -158,7 +146,7 @@ namespace Dummy
             this.panelHeader.Controls.Add(this.labelHeader);
             this.panelHeader.Location = new System.Drawing.Point(-1, -4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1086, 90);
+            this.panelHeader.Size = new System.Drawing.Size(1039, 90);
             this.panelHeader.TabIndex = 11;
             // 
             // pictureLogo
@@ -166,7 +154,7 @@ namespace Dummy
             this.pictureLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
-            this.pictureLogo.Location = new System.Drawing.Point(979, 20);
+            this.pictureLogo.Location = new System.Drawing.Point(932, 20);
             this.pictureLogo.Name = "pictureLogo";
             this.pictureLogo.Size = new System.Drawing.Size(51, 53);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,11 +266,28 @@ namespace Dummy
             this.buttonGraphTrial.Text = "coba graf ngab";
             this.buttonGraphTrial.UseVisualStyleBackColor = true;
             // 
+            // graphPanel
+            // 
+            this.graphPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.graphPanel.ColumnCount = 1;
+            this.graphPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.graphPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.graphPanel.Location = new System.Drawing.Point(439, 166);
+            this.graphPanel.Name = "graphPanel";
+            this.graphPanel.RowCount = 1;
+            this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.graphPanel.Size = new System.Drawing.Size(543, 299);
+            this.graphPanel.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.ClientSize = new System.Drawing.Size(1035, 503);
+            this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.buttonGraphTrial);
             this.Controls.Add(this.labelSearchMethod);
             this.Controls.Add(this.labelInputFilename);
@@ -290,7 +295,6 @@ namespace Dummy
             this.Controls.Add(this.labelChooseFolder);
             this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.labelInput);
-            this.Controls.Add(this.panelGraph);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonDFS);
             this.Controls.Add(this.buttonBFS);
@@ -317,7 +321,6 @@ namespace Dummy
         private System.Windows.Forms.RadioButton buttonBFS;
         private System.Windows.Forms.RadioButton buttonDFS;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.Panel panelGraph;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.PictureBox pictureLogo;
         private System.Windows.Forms.Label labelSubheader;
@@ -329,7 +332,7 @@ namespace Dummy
         private System.Windows.Forms.Label labelInputFilename;
         private System.Windows.Forms.Label labelSearchMethod;
         private System.Windows.Forms.Button buttonGraphTrial;
-
+        private System.Windows.Forms.TableLayoutPanel graphPanel;
     }
 }
 
