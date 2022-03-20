@@ -116,9 +116,14 @@ namespace Dummy
             string folders = "";
             // string files = "";
 
-            // Make a reference to a directory.
+            // Find all nodes in root path
             DirectoryInfo di = new DirectoryInfo(d.rootPath);
+            d.fillNode(d.rootPath);
+            int countNode = d.allNodes.Count();
+            String allnode = "";
+            for (int i = 0; i < countNode; i++) { allnode += d.allNodes.Dequeue() + "\n"; }
 
+            // Make a reference to a directory.
             // Get a reference to each directory in that directory.
             DirectoryInfo[] diArr = di.GetDirectories();
             // Get a reference to each file in that directory.
@@ -130,12 +135,13 @@ namespace Dummy
             // foreach (FileInfo file in fiArr) { files += file.Name + "\n"; }
 
             MessageBox.Show($"root path: {d.rootPath}\n"  +
-                   // $"file target: {d.fileTarget}\n" +
-                   // $"is all occurence: {d.isAllOccurence}\n" +
-                   // $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
-                   //folders + "=== \n" +
+                    // $"file target: {d.fileTarget}\n" +
+                    // $"is all occurence: {d.isAllOccurence}\n" +
+                    // $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
+                    //folders + "=== \n" +
 
                     // DRIVER TESTING BFS/DFS
+                    $"All Nodes: {countNode}\n{allnode}\n" +
                     $"Visited path: {countVisited}\n{visitedPath}\n" +
                     $"Final path: {countFinalPath}\n{finalPath}" +
                     $"Found is: {isFound}\n"

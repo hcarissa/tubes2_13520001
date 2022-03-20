@@ -36,6 +36,7 @@ namespace Dummy.classes
                 string fileName = Convert.ToString(file);
                 if (fileName.Equals(FileTarget))
                 {
+                    // if found, add path to finalpath
                     finalPath.Enqueue(curDir +"\\"+ fileName);
                     if (findAllOccurence)
                     {
@@ -48,41 +49,47 @@ namespace Dummy.classes
                 }
                 else
                 {
+                    // if not found, add path to visitedfolders
                     visitedFolders.Enqueue(curDir +"\\"+ fileName);
                 }
             }
             return found;
         }
 
-
+        // main function
         public bool DFS_search(string path)
         {
             visitedFolders.Enqueue(path);
             bool found = false;
             DirectoryInfo dir = new DirectoryInfo(path);
             DirectoryInfo[] dirArray = dir.GetDirectories();
+            // if have to find all occurence
             if (findAllOccurence)
             {
+                //find file in diir
                 if (isFileHere(path))
                 {
                     found = true;
                 }
                 else
                 {
+                    // find folders in files in dir
                     foreach (DirectoryInfo dirs in dirArray)
                     {
                         found = DFS_search(path + "\\" + dirs.ToString());
                     }
                 }
             }
-            else
+            else // first found
             {
+                // if file found, add to final
                 if (isFileHere(path))
                 {
-                    found = true;
+                    return true;
                 }
                 else
                 {
+                    // if found in dir, immidiately return
                     foreach (DirectoryInfo dirs in dirArray)
                     {
                         found = DFS_search(path + "\\" + dirs.ToString());
