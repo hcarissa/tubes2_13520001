@@ -65,25 +65,41 @@ namespace Dummy
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            // TESTING BFS Algorithm
-            //BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget);
-            DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
-            //bool isFound = bfs_algo.findOccurence();
-            bool isFound = dfs_algo.DFS_search(d.rootPath);
-            int count = dfs_algo.visitedFolders.Count;
-            int count2 = dfs_algo.finalPath.Count;
             String visitedPath = "";
             String finalPath = "";
-            if (count2 == 0)
+            int countVisited = 0;
+            int countFinalPath = 0;
+            bool isFound = false;
+
+            if (d.isBFS)
             {
-                finalPath = "empty";
+                // TESTING BFS
+                BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
+                isFound = bfs_algo.BFS_search();
+                countVisited = bfs_algo.visited.Count;
+                countFinalPath = bfs_algo.finalPath.Count;
+                for (int i = 0; i < countVisited; i++) { visitedPath += bfs_algo.visited.Dequeue() + "\n"; }
+                if (countFinalPath == 0) { finalPath = "empty"; }
+                else
+                {
+                    for (int i = 0; i < countFinalPath; i++) { finalPath += bfs_algo.finalPath.Dequeue() + "\n"; }
+                }
             }
-            else
+            if (!d.isBFS)
             {
-                for (int i = 0; i < count2; i++) { finalPath += dfs_algo.finalPath.Dequeue() + "\n"; }
-                isFound = true;
+                // TESTING DFS
+                DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
+                isFound = dfs_algo.DFS_search(d.rootPath);
+                countVisited = dfs_algo.visitedFolders.Count;
+                countFinalPath = dfs_algo.finalPath.Count;
+                for (int i = 0; i < countVisited; i++) { visitedPath += dfs_algo.visitedFolders.Dequeue() + "\n"; }
+                if (countFinalPath == 0) { finalPath = "empty"; }
+                else 
+                { 
+                    for (int i = 0; i < countFinalPath; i++) { finalPath += dfs_algo.finalPath.Dequeue() + "\n"; }
+                    isFound = true; 
+                } 
             }
-            for (int i = 0; i < count; i++) { visitedPath += dfs_algo.visitedFolders.Dequeue() + "\n"; }
 
             // initialize folders & files name
             string folders = "";
@@ -108,9 +124,9 @@ namespace Dummy
                    // $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
                    //folders + "=== \n" +
 
-                    // DRIVER TESTING BFS
-                    $"Visited path: {count}\n{visitedPath}\n" +
-                    $"Final path: {finalPath}\n" +
+                    // DRIVER TESTING BFS/DFS
+                    $"Visited path: {countVisited}\n{visitedPath}\n" +
+                    $"Final path: {countFinalPath}\n{finalPath}" +
                     $"Found is: {isFound}\n"
                 );
         }
