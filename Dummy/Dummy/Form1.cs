@@ -24,15 +24,7 @@ namespace Dummy
 
             //create the graph content 
             d.show = false;
-            d.graph.AddEdge("A", "B");
-            d.graph.AddEdge("B", "C");
-            d.graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
-            d.graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
-            d.graph.FindNode("B").Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
-
-            // Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
-            // c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
-            // c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+            d.isAllOccurence = false;
         }
 
         private void pathBtn_Click(object sender, EventArgs e)
@@ -81,6 +73,7 @@ namespace Dummy
             int countVisited = 0;
             int countFinalPath = 0;
             bool isFound = false;
+            // d.fillNodeBFS();
 
             if (d.isBFS)
             {
@@ -89,12 +82,19 @@ namespace Dummy
                 isFound = bfs_algo.BFS_search();
                 countVisited = bfs_algo.visited.Count;
                 countFinalPath = bfs_algo.finalPath.Count;
-                for (int i = 0; i < countVisited; i++) { visitedPath += bfs_algo.visited.Dequeue() + "\n"; }
-                if (countFinalPath == 0) { finalPath = "empty"; }
-                else
-                {
-                    for (int i = 0; i < countFinalPath; i++) { finalPath += bfs_algo.finalPath.Dequeue() + "\n"; }
-                }
+
+                MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getFinalPathArray(), bfs_algo.getVisitedArray());
+                myGraph.buildGraph();
+
+                // GRAPH VISUALIZATION
+                // create a viewer object 
+                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                // bind the graph to the viewer 
+                viewer.Graph = myGraph.graph;
+
+                d.show = !d.show;
+                if (d.show) { this.graphPanel.Controls.Add(viewer); }
+                else { this.graphPanel.Controls.Clear(); }
             }
             if (!d.isBFS)
             {
@@ -103,38 +103,27 @@ namespace Dummy
                 isFound = dfs_algo.DFS_search(d.rootPath);
                 countVisited = dfs_algo.visitedFolders.Count;
                 countFinalPath = dfs_algo.finalPath.Count;
+                /*
                 for (int i = 0; i < countVisited; i++) { visitedPath += dfs_algo.visitedFolders.Dequeue() + "\n"; }
                 if (countFinalPath == 0) { finalPath = "empty"; }
                 else 
                 { 
                     for (int i = 0; i < countFinalPath; i++) { finalPath += dfs_algo.finalPath.Dequeue() + "\n"; }
                     isFound = true; 
-                } 
+                }
+                 */
             }
 
-            // initialize folders & files name
-            string folders = "";
-            // string files = "";
-
             // Find all nodes in root path
-            DirectoryInfo di = new DirectoryInfo(d.rootPath);
-            d.fillNode(d.rootPath);
+            /*
+             DirectoryInfo di = new DirectoryInfo(d.rootPath);
             int countNode = d.allNodes.Count();
             String allnode = "";
             for (int i = 0; i < countNode; i++) { allnode += d.allNodes.Dequeue() + "\n"; }
+             */
 
-            // Make a reference to a directory.
-            // Get a reference to each directory in that directory.
-            DirectoryInfo[] diArr = di.GetDirectories();
-            // Get a reference to each file in that directory.
-            // FileInfo[] fiArr = di.GetFiles();
-
-            // store the names of the directories.
-            // foreach (DirectoryInfo dri in diArr) { folders += dri.Name + "\n"; }
-            // store the names of the files.
-            // foreach (FileInfo file in fiArr) { files += file.Name + "\n"; }
-
-            MessageBox.Show($"root path: {d.rootPath}\n"  +
+            /*
+             MessageBox.Show($"root path: {d.rootPath}\n"  +
                     // $"file target: {d.fileTarget}\n" +
                     // $"is all occurence: {d.isAllOccurence}\n" +
                     // $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
@@ -146,18 +135,21 @@ namespace Dummy
                     $"Final path: {countFinalPath}\n{finalPath}" +
                     $"Found is: {isFound}\n"
                 );   
+             */
         }
 
         private void buttonGraphTrial_Click(object sender, EventArgs e)
         {
-            // GRAPH VISUALIZATION
-            // create a viewer object 
-            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            // bind the graph to the viewer 
-            viewer.Graph = d.graph;
+            BFS_Algorithm bfs_algo2 = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
+            bool isFound = bfs_algo2.BFS_search();
+            MyGraph myGraph2 = new MyGraph(d.rootPath, bfs_algo2.getFinalPathArray(), bfs_algo2.getVisitedArray());
+            myGraph2.buildGraph();
+
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer2 = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            viewer2.Graph = myGraph2.graph;
 
             d.show = !d.show;
-            if (d.show) { this.graphPanel.Controls.Add(viewer); }
+            if (d.show) { this.graphPanel.Controls.Add(viewer2); }
             else { this.graphPanel.Controls.Clear(); }
         }
     }

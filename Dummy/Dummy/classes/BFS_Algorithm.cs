@@ -26,6 +26,28 @@ namespace Dummy.classes
             findAllOccurence = findAllOccurenceIn;
         }
 
+        public string[] getVisitedArray ()
+        {
+            int qLength = visited.Count;
+            string[] strArray = new string[qLength];
+            for (int i = 0; i < qLength; i++)
+            {
+                strArray[i] = visited.Dequeue();
+            }
+            return strArray;
+        }
+
+        public string[] getFinalPathArray()
+        {
+            int qLength = finalPath.Count;
+            string[] strArray = new string[qLength];
+            for (int i = 0; i < qLength; i++)
+            {
+                strArray[i] = finalPath.Dequeue();
+            }
+            return strArray;
+        }
+
         // mencari satu kejadian file ditemukan
         public bool searchOneOccurence ()
         {

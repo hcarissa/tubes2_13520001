@@ -70,6 +70,7 @@
     <Compile Include="classes\App.cs" />
     <Compile Include="classes\BFS_Algorithm.cs" />
     <Compile Include="classes\DFS_Algorithm.cs" />
+    <Compile Include="classes\MyGraph.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -146,7 +146,7 @@ namespace Dummy
             this.panelHeader.Controls.Add(this.labelHeader);
             this.panelHeader.Location = new System.Drawing.Point(-1, -4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1039, 90);
+            this.panelHeader.Size = new System.Drawing.Size(1164, 90);
             this.panelHeader.TabIndex = 11;
             // 
             // pictureLogo
@@ -154,7 +154,7 @@ namespace Dummy
             this.pictureLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
-            this.pictureLogo.Location = new System.Drawing.Point(932, 20);
+            this.pictureLogo.Location = new System.Drawing.Point(1057, 20);
             this.pictureLogo.Name = "pictureLogo";
             this.pictureLogo.Size = new System.Drawing.Size(51, 53);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,22 +272,26 @@ namespace Dummy
             this.graphPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.graphPanel.AutoSize = true;
             this.graphPanel.ColumnCount = 1;
             this.graphPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.graphPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F);
+            this.graphPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.graphPanel.Location = new System.Drawing.Point(439, 166);
+            this.graphPanel.Margin = new System.Windows.Forms.Padding(0);
             this.graphPanel.Name = "graphPanel";
             this.graphPanel.RowCount = 1;
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.graphPanel.Size = new System.Drawing.Size(543, 299);
+            this.graphPanel.Size = new System.Drawing.Size(668, 424);
             this.graphPanel.TabIndex = 19;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1035, 511);
+            this.ClientSize = new System.Drawing.Size(1160, 636);
             this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.buttonGraphTrial);
             this.Controls.Add(this.labelSearchMethod);

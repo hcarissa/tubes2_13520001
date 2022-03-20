@@ -54,6 +54,57 @@ namespace Dummy.classes
             return thereIs;
         }
 
+        public void fillNodeBFS()
+        {
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue(rootPath);
+            allNodes.Enqueue(rootPath);
+
+            while (queue.Count != 0)
+            {
+                string path = queue.Dequeue();
+                string prefix = path + "\\";
+                if (path.Equals("C:\\"))
+                {
+                    prefix = path;
+                }
+
+                DirectoryInfo parentDir = new DirectoryInfo(path);
+                FileInfo[] files = parentDir.GetFiles();
+                DirectoryInfo[] directories = parentDir.GetDirectories();
+
+                foreach (FileInfo file in files)
+                {
+                    string stringFile = Convert.ToString(file);
+                    if (!allNodes.Contains(prefix + stringFile))
+                    {
+                        allNodes.Enqueue(prefix + stringFile);
+                    }
+                }
+
+                foreach (DirectoryInfo directory in directories)
+                {
+                    string stringDirectory = Convert.ToString(directory);
+                    if (!allNodes.Contains(prefix + stringDirectory))
+                    {
+                        allNodes.Enqueue(prefix + stringDirectory);
+                        queue.Enqueue(prefix + stringDirectory);
+                    }
+                }
+            }
+        }
+
+        public string[] getNodeArray ()
+        {
+            fillNodeBFS();
+            int qLength = allNodes.Count;
+            string[] strArray = new string[qLength];
+            for (int i = 0; i < qLength; i++)
+            {
+                strArray[i] = allNodes.Dequeue();
+            }
+            return strArray;
+        }
 
         public string whichAlgo (bool isBFS)
         {
