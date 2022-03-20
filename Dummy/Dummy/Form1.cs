@@ -83,13 +83,11 @@ namespace Dummy
                 countVisited = bfs_algo.visited.Count;
                 countFinalPath = bfs_algo.finalPath.Count;
 
+                // GRAPH VISUALIZATION
                 MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getFinalPathArray(), bfs_algo.getVisitedArray());
                 myGraph.buildGraph();
 
-                // GRAPH VISUALIZATION
-                // create a viewer object 
                 Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-                // bind the graph to the viewer 
                 viewer.Graph = myGraph.graph;
 
                 d.show = !d.show;
@@ -103,15 +101,17 @@ namespace Dummy
                 isFound = dfs_algo.DFS_search(d.rootPath);
                 countVisited = dfs_algo.visitedFolders.Count;
                 countFinalPath = dfs_algo.finalPath.Count;
-                /*
-                for (int i = 0; i < countVisited; i++) { visitedPath += dfs_algo.visitedFolders.Dequeue() + "\n"; }
-                if (countFinalPath == 0) { finalPath = "empty"; }
-                else 
-                { 
-                    for (int i = 0; i < countFinalPath; i++) { finalPath += dfs_algo.finalPath.Dequeue() + "\n"; }
-                    isFound = true; 
-                }
-                 */
+
+                // GRAPH VISUALIZATION
+                MyGraph myGraph = new MyGraph(d.rootPath, dfs_algo.getFinalPathArray(), dfs_algo.getVisitedArray());
+                myGraph.buildGraph();
+
+                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                viewer.Graph = myGraph.graph;
+
+                d.show = !d.show;
+                if (d.show) { this.graphPanel.Controls.Add(viewer); }
+                else { this.graphPanel.Controls.Clear(); }
             }
 
             // Find all nodes in root path

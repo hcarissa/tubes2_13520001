@@ -24,6 +24,27 @@ namespace Dummy.classes
             findAllOccurence = findAllOccurenceIn;
 
         }
+        public string[] getVisitedArray()
+        {
+            int qLength = visitedFolders.Count;
+            string[] strArray = new string[qLength];
+            for (int i = 0; i < qLength; i++)
+            {
+                strArray[i] = visitedFolders.Dequeue();
+            }
+            return strArray;
+        }
+
+        public string[] getFinalPathArray()
+        {
+            int qLength = finalPath.Count;
+            string[] strArray = new string[qLength];
+            for (int i = 0; i < qLength; i++)
+            {
+                strArray[i] = finalPath.Dequeue();
+            }
+            return strArray;
+        }
 
         public bool isFileHere(string curDir) // untuk mengecek apakah file berada di directory
         {
