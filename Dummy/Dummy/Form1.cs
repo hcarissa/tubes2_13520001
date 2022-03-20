@@ -59,13 +59,24 @@ namespace Dummy
         private void searchBtn_Click(object sender, EventArgs e)
         {
             // TESTING BFS Algorithm
-            BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget);
-            bool isFound = bfs_algo.findOccurence();
-            int count = bfs_algo.visited.Count;
+            //BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget);
+            DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
+            //bool isFound = bfs_algo.findOccurence();
+            bool isFound = dfs_algo.DFS_search(d.rootPath);
+            int count = dfs_algo.visitedFolders.Count;
+            int count2 = dfs_algo.finalPath.Count;
             String visitedPath = "";
-            String finalPath = "empty";
-            for (int i = 0; i < count; i++) { visitedPath += bfs_algo.visited.Dequeue() + "\n"; }
-            if (isFound)                    { finalPath = bfs_algo.finalPath.Peek(); }
+            String finalPath = "";
+            if (count2 == 0)
+            {
+                finalPath = "empty";
+            }
+            else
+            {
+                for (int i = 0; i < count2; i++) { finalPath += dfs_algo.finalPath.Dequeue() + "\n"; }
+                isFound = true;
+            }
+            for (int i = 0; i < count; i++) { visitedPath += dfs_algo.visitedFolders.Dequeue() + "\n"; }
 
             // initialize folders & files name
             string folders = "";

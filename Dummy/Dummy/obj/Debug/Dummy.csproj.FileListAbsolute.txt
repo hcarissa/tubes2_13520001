@@ -47,3 +47,28 @@ C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dumm
 C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.csproj.CopyComplete
 C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.exe
 C:\Users\Fayza Nadia\Documents\ITB\4\Strategi Algoritma\Tubes 2\Tubes\Dummy\Dummy\obj\Debug\Dummy.pdb
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Dummy.exe.config
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Dummy.exe
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Dummy.pdb
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\AutomaticGraphLayout.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\AutomaticGraphLayout.Drawing.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.csproj.AssemblyReference.cache
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.csproj.SuggestedBindingRedirects.cache
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.Form1.resources
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.Properties.Resources.resources
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.csproj.GenerateResource.cache
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.csproj.CoreCompileInputs.cache
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.csproj.CopyComplete
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.exe
+D:\ITB\sem4\stima\tubes2\tubes2_13520001\Dummy\Dummy\obj\Debug\Dummy.pdb
