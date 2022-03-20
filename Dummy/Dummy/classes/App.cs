@@ -12,6 +12,9 @@ namespace Dummy.classes
         public string fileTarget { get; set; }
         public bool isAllOccurence { get; set; }
         public bool isBFS { get; set; }
+        // create a graph object 
+        public Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
+        public bool show { get; set; }
 
         public string whichAlgo (bool isBFS)
         {

@@ -57,7 +57,7 @@ namespace Dummy
             this.textboxInputFilename.AccessibleDescription = "";
             this.textboxInputFilename.BackColor = System.Drawing.Color.White;
             this.textboxInputFilename.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textboxInputFilename.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxInputFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxInputFilename.Location = new System.Drawing.Point(45, 272);
             this.textboxInputFilename.Multiline = true;
             this.textboxInputFilename.Name = "textboxInputFilename";
@@ -70,7 +70,7 @@ namespace Dummy
             // 
             this.buttonChooseFolder.BackColor = System.Drawing.Color.Transparent;
             this.buttonChooseFolder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonChooseFolder.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChooseFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChooseFolder.Location = new System.Drawing.Point(45, 190);
             this.buttonChooseFolder.Name = "buttonChooseFolder";
             this.buttonChooseFolder.Size = new System.Drawing.Size(138, 34);
@@ -82,11 +82,11 @@ namespace Dummy
             // checkboxAllOccurence
             // 
             this.checkboxAllOccurence.AutoSize = true;
-            this.checkboxAllOccurence.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkboxAllOccurence.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkboxAllOccurence.ForeColor = System.Drawing.Color.Black;
             this.checkboxAllOccurence.Location = new System.Drawing.Point(45, 303);
             this.checkboxAllOccurence.Name = "checkboxAllOccurence";
-            this.checkboxAllOccurence.Size = new System.Drawing.Size(150, 22);
+            this.checkboxAllOccurence.Size = new System.Drawing.Size(113, 17);
             this.checkboxAllOccurence.TabIndex = 2;
             this.checkboxAllOccurence.Text = "Find all occurence";
             this.checkboxAllOccurence.UseVisualStyleBackColor = true;
@@ -96,11 +96,11 @@ namespace Dummy
             // 
             this.buttonBFS.AutoSize = true;
             this.buttonBFS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBFS.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBFS.ForeColor = System.Drawing.Color.Black;
             this.buttonBFS.Location = new System.Drawing.Point(45, 372);
             this.buttonBFS.Name = "buttonBFS";
-            this.buttonBFS.Size = new System.Drawing.Size(55, 22);
+            this.buttonBFS.Size = new System.Drawing.Size(45, 17);
             this.buttonBFS.TabIndex = 3;
             this.buttonBFS.TabStop = true;
             this.buttonBFS.Text = "BFS";
@@ -111,11 +111,11 @@ namespace Dummy
             // 
             this.buttonDFS.AutoSize = true;
             this.buttonDFS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDFS.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDFS.ForeColor = System.Drawing.Color.Black;
             this.buttonDFS.Location = new System.Drawing.Point(128, 372);
             this.buttonDFS.Name = "buttonDFS";
-            this.buttonDFS.Size = new System.Drawing.Size(56, 22);
+            this.buttonDFS.Size = new System.Drawing.Size(46, 17);
             this.buttonDFS.TabIndex = 3;
             this.buttonDFS.TabStop = true;
             this.buttonDFS.Text = "DFS";
@@ -126,7 +126,7 @@ namespace Dummy
             // 
             this.buttonSearch.BackColor = System.Drawing.Color.RoyalBlue;
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearch.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
             this.buttonSearch.Location = new System.Drawing.Point(45, 419);
             this.buttonSearch.Name = "buttonSearch";
@@ -168,11 +168,11 @@ namespace Dummy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSubheader.AutoSize = true;
             this.labelSubheader.BackColor = System.Drawing.Color.Transparent;
-            this.labelSubheader.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSubheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSubheader.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.labelSubheader.Location = new System.Drawing.Point(42, 48);
             this.labelSubheader.Name = "labelSubheader";
-            this.labelSubheader.Size = new System.Drawing.Size(343, 21);
+            this.labelSubheader.Size = new System.Drawing.Size(238, 15);
             this.labelSubheader.TabIndex = 12;
             this.labelSubheader.Text = "ready to search your file as fast as the wind";
             // 
@@ -183,11 +183,11 @@ namespace Dummy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelHeader.AutoSize = true;
             this.labelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelHeader.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.labelHeader.Location = new System.Drawing.Point(39, 15);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(169, 39);
+            this.labelHeader.Size = new System.Drawing.Size(123, 26);
             this.labelHeader.TabIndex = 12;
             this.labelHeader.Text = "search.me";
             // 
@@ -195,10 +195,10 @@ namespace Dummy
             // 
             this.labelInput.AutoSize = true;
             this.labelInput.BackColor = System.Drawing.Color.Transparent;
-            this.labelInput.Font = new System.Drawing.Font("Montserrat Medium", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInput.Location = new System.Drawing.Point(40, 126);
             this.labelInput.Name = "labelInput";
-            this.labelInput.Size = new System.Drawing.Size(61, 25);
+            this.labelInput.Size = new System.Drawing.Size(39, 18);
             this.labelInput.TabIndex = 12;
             this.labelInput.Text = "Input";
             // 
@@ -206,10 +206,10 @@ namespace Dummy
             // 
             this.labelOutput.AutoSize = true;
             this.labelOutput.BackColor = System.Drawing.Color.Transparent;
-            this.labelOutput.Font = new System.Drawing.Font("Montserrat Medium", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOutput.Location = new System.Drawing.Point(434, 126);
             this.labelOutput.Name = "labelOutput";
-            this.labelOutput.Size = new System.Drawing.Size(77, 25);
+            this.labelOutput.Size = new System.Drawing.Size(52, 18);
             this.labelOutput.TabIndex = 13;
             this.labelOutput.Text = "Output";
             // 
@@ -217,20 +217,20 @@ namespace Dummy
             // 
             this.labelChooseFolder.AutoSize = true;
             this.labelChooseFolder.BackColor = System.Drawing.Color.Transparent;
-            this.labelChooseFolder.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChooseFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChooseFolder.Location = new System.Drawing.Point(41, 166);
             this.labelChooseFolder.Name = "labelChooseFolder";
-            this.labelChooseFolder.Size = new System.Drawing.Size(211, 21);
+            this.labelChooseFolder.Size = new System.Drawing.Size(152, 15);
             this.labelChooseFolder.TabIndex = 14;
             this.labelChooseFolder.Text = "Choose your starting folder";
             // 
             // labelFolderChosen
             // 
             this.labelFolderChosen.AutoSize = true;
-            this.labelFolderChosen.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFolderChosen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFolderChosen.Location = new System.Drawing.Point(189, 198);
             this.labelFolderChosen.Name = "labelFolderChosen";
-            this.labelFolderChosen.Size = new System.Drawing.Size(126, 18);
+            this.labelFolderChosen.Size = new System.Drawing.Size(94, 13);
             this.labelFolderChosen.TabIndex = 15;
             this.labelFolderChosen.Text = "No folder choosen";
             // 
@@ -238,10 +238,10 @@ namespace Dummy
             // 
             this.labelInputFilename.AutoSize = true;
             this.labelInputFilename.BackColor = System.Drawing.Color.Transparent;
-            this.labelInputFilename.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInputFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInputFilename.Location = new System.Drawing.Point(41, 248);
             this.labelInputFilename.Name = "labelInputFilename";
-            this.labelInputFilename.Size = new System.Drawing.Size(126, 21);
+            this.labelInputFilename.Size = new System.Drawing.Size(88, 15);
             this.labelInputFilename.TabIndex = 16;
             this.labelInputFilename.Text = "Input file name";
             // 
@@ -249,10 +249,10 @@ namespace Dummy
             // 
             this.labelSearchMethod.AutoSize = true;
             this.labelSearchMethod.BackColor = System.Drawing.Color.Transparent;
-            this.labelSearchMethod.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearchMethod.Location = new System.Drawing.Point(41, 348);
             this.labelSearchMethod.Name = "labelSearchMethod";
-            this.labelSearchMethod.Size = new System.Drawing.Size(149, 21);
+            this.labelSearchMethod.Size = new System.Drawing.Size(108, 15);
             this.labelSearchMethod.TabIndex = 17;
             this.labelSearchMethod.Text = "Searching method";
             // 
@@ -265,6 +265,7 @@ namespace Dummy
             this.buttonGraphTrial.TabIndex = 18;
             this.buttonGraphTrial.Text = "coba graf ngab";
             this.buttonGraphTrial.UseVisualStyleBackColor = true;
+            this.buttonGraphTrial.Click += new System.EventHandler(this.buttonGraphTrial_Click);
             // 
             // graphPanel
             // 
@@ -286,7 +287,7 @@ namespace Dummy
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1035, 503);
+            this.ClientSize = new System.Drawing.Size(1035, 511);
             this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.buttonGraphTrial);
             this.Controls.Add(this.labelSearchMethod);

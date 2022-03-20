@@ -15,30 +15,25 @@ namespace Dummy
 {
     public partial class Form1 : Form
     {
+        App d = new App();
         public Form1()
         {
             InitializeComponent();
-            //create a viewer object 
-            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            //create a graph object 
-            Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
-            //create the graph content 
-            graph.AddEdge("A", "B");
-            graph.AddEdge("B", "C");
-            graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
-            graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
-            graph.FindNode("B").Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
-            Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
-            c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
-            c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
-            //bind the graph to the viewer 
-            viewer.Graph = graph;
-            this.graphPanel.Controls.Add(viewer);
-        }
+            // BFS_Algo bfs_algo = new BFS_Algo(...);
+            // DFS_Algo dfs_algo = new DFS_Algo(...);
 
-        App d = new App();
-        // BFS_Algo bfs_algo = new BFS_Algo(...);
-        // DFS_Algo dfs_algo = new DFS_Algo(...);
+            //create the graph content 
+            d.show = false;
+            d.graph.AddEdge("A", "B");
+            d.graph.AddEdge("B", "C");
+            d.graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+            d.graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
+            d.graph.FindNode("B").Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
+
+            // Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
+            // c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
+            // c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+        }
 
         private void pathBtn_Click(object sender, EventArgs e)
         {
@@ -144,8 +139,20 @@ namespace Dummy
                     $"Visited path: {countVisited}\n{visitedPath}\n" +
                     $"Final path: {countFinalPath}\n{finalPath}" +
                     $"Found is: {isFound}\n"
-                );
+                );   
         }
 
+        private void buttonGraphTrial_Click(object sender, EventArgs e)
+        {
+            // GRAPH VISUALIZATION
+            // create a viewer object 
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            // bind the graph to the viewer 
+            viewer.Graph = d.graph;
+
+            d.show = !d.show;
+            if (d.show) { this.graphPanel.Controls.Add(viewer); }
+            else { this.graphPanel.Controls.Clear(); }
+        }
     }
 }
