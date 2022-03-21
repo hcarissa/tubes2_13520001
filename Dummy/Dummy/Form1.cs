@@ -89,6 +89,7 @@ namespace Dummy
 
                 Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
                 viewer.Graph = myGraph.graph;
+                viewer.OutsideAreaBrush = Brushes.White;
 
                 d.show = !d.show;
                 if (d.show) { this.graphPanel.Controls.Add(viewer); }
@@ -108,6 +109,7 @@ namespace Dummy
 
                 Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
                 viewer.Graph = myGraph.graph;
+                viewer.OutsideAreaBrush = Brushes.White;
 
                 d.show = !d.show;
                 if (d.show) { this.graphPanel.Controls.Add(viewer); }

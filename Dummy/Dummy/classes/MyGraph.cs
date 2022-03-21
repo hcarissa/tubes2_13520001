@@ -50,21 +50,37 @@ namespace Dummy.classes
                         if ((isFinalPathContain(path)) && (isFinalPathContain(prefix+stringFile)))
                         {
                             graph.AddEdge(path, prefix + stringFile).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
-                            graph.FindNode(path).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
-                            graph.FindNode(prefix + stringFile).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
+                            graph.FindNode(path).Label.FontColor = Microsoft.Msagl.Drawing.Color.Blue;
+                            graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(path).Attr.LabelMargin = 25;
+                            graph.FindNode(prefix + stringFile).Label.FontColor = Microsoft.Msagl.Drawing.Color.Blue;
+                            graph.FindNode(prefix + stringFile).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(prefix + stringFile).Attr.LabelMargin = 25;
                         }
                         else if (!isVisitedPathContain(prefix + stringFile))
                         {
                             graph.AddEdge(path, prefix + stringFile);
+                            graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(prefix + stringFile).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(path).Attr.LabelMargin = 25;
+                            graph.FindNode(prefix + stringFile).Attr.LabelMargin = 25;
                         }
                         else if (isVisitedPathContain(prefix + stringFile) && (!isFinalPathContain(prefix + stringFile))) {
                             graph.AddEdge(path, prefix + stringFile).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                            graph.FindNode(prefix + stringFile).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                            graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(prefix + stringFile).Label.FontColor = Microsoft.Msagl.Drawing.Color.Red;
+                            graph.FindNode(prefix + stringFile).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(path).Attr.LabelMargin = 25;
+                            graph.FindNode(prefix + stringFile).Attr.LabelMargin = 25;
                         }
                     }
                     else
                     {
                         graph.AddEdge(path, prefix + stringFile);
+                        graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                        graph.FindNode(prefix + stringFile).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                        graph.FindNode(path).Attr.LabelMargin = 25;
+                        graph.FindNode(prefix + stringFile).Attr.LabelMargin = 25;
                     }
                     graph.FindNode(prefix + stringFile).LabelText = stringFile;
                 }
@@ -78,29 +94,45 @@ namespace Dummy.classes
                         if ((isFinalPathContain(path)) && (isFinalPathContain(prefix + stringDirectory)))
                         {
                             graph.AddEdge(path, prefix + stringDirectory).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
-                            graph.FindNode(path).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
-                            graph.FindNode(prefix + stringDirectory).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
+                            graph.FindNode(path).Label.FontColor = Microsoft.Msagl.Drawing.Color.Blue;
+                            graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(path).Attr.LabelMargin = 25;
+                            graph.FindNode(prefix + stringDirectory).Label.FontColor = Microsoft.Msagl.Drawing.Color.Blue;
+                            graph.FindNode(prefix + stringDirectory).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(prefix + stringDirectory).Attr.LabelMargin = 25;
                         }
                         else if (!isVisitedPathContain(prefix + stringDirectory))
                         {
                             graph.AddEdge(path, prefix + stringDirectory);
+                            graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(prefix + stringDirectory).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(path).Attr.LabelMargin = 25;
+                            graph.FindNode(prefix + stringDirectory).Attr.LabelMargin = 25;
                         }
                         else if (isVisitedPathContain(prefix + stringDirectory) && (!isFinalPathContain(prefix + stringDirectory)))
                         {
                             graph.AddEdge(path, prefix + stringDirectory).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                            graph.FindNode(prefix + stringDirectory).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                            graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(prefix + stringDirectory).Label.FontColor = Microsoft.Msagl.Drawing.Color.Red;
+                            graph.FindNode(prefix + stringDirectory).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                            graph.FindNode(path).Attr.LabelMargin = 25;
+                            graph.FindNode(prefix + stringDirectory).Attr.LabelMargin = 25;
                         }
                     }
                     else
                     {
                         graph.AddEdge(path, prefix + stringDirectory);
+                        graph.FindNode(path).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                        graph.FindNode(prefix + stringDirectory).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Plaintext;
+                        graph.FindNode(path).Attr.LabelMargin = 25;
+                        graph.FindNode(prefix + stringDirectory).Attr.LabelMargin = 25;
                     }
                     graph.FindNode(prefix + stringDirectory).LabelText = stringDirectory;
                 }
             }
             if (!isFinalPathContain(rootPath))
             {
-                graph.FindNode(rootPath).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                graph.FindNode(rootPath).Label.FontColor = Microsoft.Msagl.Drawing.Color.Red;
             }
         }
 
