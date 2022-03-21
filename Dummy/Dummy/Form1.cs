@@ -196,16 +196,30 @@ namespace Dummy
             if (d.isBFS)
             {
                 BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
-                isFound = bfs_algo.BFS_search();
-                string finalPath = bfs_algo.finalPath.Dequeue();
-                Process.Start(finalPath);
+                isFound = bfs_algo.BFS_search();                
+                if (isFound)
+                {
+                    string finalPath = bfs_algo.finalPath.Dequeue();
+                    Process.Start(finalPath);
+                }
+                else
+                {
+                    
+                }
             }
             else if (!d.isBFS)
             {
                 DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
                 isFound = dfs_algo.DFS_search(d.rootPath);
-                string finalPath = dfs_algo.finalPath.Dequeue();
-                Process.Start(finalPath);
+                if (isFound)
+                {
+                    string finalPath = dfs_algo.finalPath.Dequeue();
+                    Process.Start(finalPath);
+                }
+                else
+                {
+                    
+                }
             }
         }
     }
