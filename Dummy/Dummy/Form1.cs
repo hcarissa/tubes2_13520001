@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -73,15 +74,34 @@ namespace Dummy
             int countVisited = 0;
             int countFinalPath = 0;
             bool isFound = false;
+            bool isFoundCopy = false;
             // d.fillNodeBFS();
 
             if (d.isBFS)
             {
                 // TESTING BFS
                 BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
+                BFS_Algorithm bfs_algo_copy = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
                 isFound = bfs_algo.BFS_search();
+                isFoundCopy = bfs_algo_copy.BFS_search();
                 countVisited = bfs_algo.visited.Count;
                 countFinalPath = bfs_algo.finalPath.Count;
+
+                // HYPERLINK
+                if (countFinalPath > 0)
+                {
+
+                    string pathText = bfs_algo_copy.finalPath.Dequeue();
+                    hyperlinkLabel.Text = pathText;
+                    hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
+                    hyperlinkLabel.LinkColor = Color.Blue;
+                }
+                else if (countFinalPath == 0)
+                {
+                    hyperlinkLabel.Text = "File not found!";
+                    hyperlinkLabel.LinkBehavior = LinkBehavior.NeverUnderline;
+                    hyperlinkLabel.LinkColor = Color.Black;
+                }
 
                 // GRAPH VISUALIZATION
                 MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getFinalPathArray(), bfs_algo.getVisitedArray());
@@ -92,16 +112,40 @@ namespace Dummy
                 viewer.OutsideAreaBrush = Brushes.White;
 
                 d.show = !d.show;
-                if (d.show) { this.graphPanel.Controls.Add(viewer); }
-                else { this.graphPanel.Controls.Clear(); }
+                if (d.show) {
+                    this.graphPanel.Controls.Add(viewer);
+                }
+                else
+                {
+                    this.graphPanel.Controls.Clear();
+                    hyperlinkLabel.ResetText();
+                }
             }
             if (!d.isBFS)
             {
                 // TESTING DFS
                 DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
+                DFS_Algorithm dfs_algo_copy = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
                 isFound = dfs_algo.DFS_search(d.rootPath);
+                isFoundCopy = dfs_algo_copy.DFS_search(d.rootPath);
                 countVisited = dfs_algo.visitedFolders.Count;
                 countFinalPath = dfs_algo.finalPath.Count;
+
+                // HYPERLINK
+                if (countFinalPath > 0)
+                {
+
+                    string pathText = dfs_algo_copy.finalPath.Dequeue();
+                    hyperlinkLabel.Text = pathText;
+                    hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
+                    hyperlinkLabel.LinkColor = Color.Blue;
+                }
+                else if (countFinalPath == 0)
+                {
+                    hyperlinkLabel.Text = "File not found!";
+                    hyperlinkLabel.LinkBehavior = LinkBehavior.NeverUnderline;                 
+                    hyperlinkLabel.LinkColor = Color.Black;
+                }
 
                 // GRAPH VISUALIZATION
                 MyGraph myGraph = new MyGraph(d.rootPath, dfs_algo.getFinalPathArray(), dfs_algo.getVisitedArray());
@@ -112,8 +156,14 @@ namespace Dummy
                 viewer.OutsideAreaBrush = Brushes.White;
 
                 d.show = !d.show;
-                if (d.show) { this.graphPanel.Controls.Add(viewer); }
-                else { this.graphPanel.Controls.Clear(); }
+                if (d.show)
+                {
+                    this.graphPanel.Controls.Add(viewer);
+                }
+                else
+                {
+                    this.graphPanel.Controls.Clear(); 
+                    hyperlinkLabel.ResetText(); }
             }
 
             // Find all nodes in root path
@@ -140,19 +190,23 @@ namespace Dummy
              */
         }
 
-        private void buttonGraphTrial_Click(object sender, EventArgs e)
+        private void hyperlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            BFS_Algorithm bfs_algo2 = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
-            bool isFound = bfs_algo2.BFS_search();
-            MyGraph myGraph2 = new MyGraph(d.rootPath, bfs_algo2.getFinalPathArray(), bfs_algo2.getVisitedArray());
-            myGraph2.buildGraph();
-
-            Microsoft.Msagl.GraphViewerGdi.GViewer viewer2 = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-            viewer2.Graph = myGraph2.graph;
-
-            d.show = !d.show;
-            if (d.show) { this.graphPanel.Controls.Add(viewer2); }
-            else { this.graphPanel.Controls.Clear(); }
+            Boolean isFound = false;
+            if (d.isBFS)
+            {
+                BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
+                isFound = bfs_algo.BFS_search();
+                string finalPath = bfs_algo.finalPath.Dequeue();
+                Process.Start(finalPath);
+            }
+            else if (!d.isBFS)
+            {
+                DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
+                isFound = dfs_algo.DFS_search(d.rootPath);
+                string finalPath = dfs_algo.finalPath.Dequeue();
+                Process.Start(finalPath);
+            }
         }
     }
 }

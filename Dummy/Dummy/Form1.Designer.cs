@@ -46,8 +46,8 @@ namespace Dummy
             this.labelFolderChosen = new System.Windows.Forms.Label();
             this.labelInputFilename = new System.Windows.Forms.Label();
             this.labelSearchMethod = new System.Windows.Forms.Label();
-            this.buttonGraphTrial = new System.Windows.Forms.Button();
             this.graphPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.hyperlinkLabel = new System.Windows.Forms.LinkLabel();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +86,7 @@ namespace Dummy
             this.checkboxAllOccurence.ForeColor = System.Drawing.Color.Black;
             this.checkboxAllOccurence.Location = new System.Drawing.Point(45, 303);
             this.checkboxAllOccurence.Name = "checkboxAllOccurence";
-            this.checkboxAllOccurence.Size = new System.Drawing.Size(113, 17);
+            this.checkboxAllOccurence.Size = new System.Drawing.Size(138, 20);
             this.checkboxAllOccurence.TabIndex = 2;
             this.checkboxAllOccurence.Text = "Find all occurence";
             this.checkboxAllOccurence.UseVisualStyleBackColor = true;
@@ -98,9 +98,9 @@ namespace Dummy
             this.buttonBFS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonBFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBFS.ForeColor = System.Drawing.Color.Black;
-            this.buttonBFS.Location = new System.Drawing.Point(45, 372);
+            this.buttonBFS.Location = new System.Drawing.Point(45, 368);
             this.buttonBFS.Name = "buttonBFS";
-            this.buttonBFS.Size = new System.Drawing.Size(45, 17);
+            this.buttonBFS.Size = new System.Drawing.Size(54, 20);
             this.buttonBFS.TabIndex = 3;
             this.buttonBFS.TabStop = true;
             this.buttonBFS.Text = "BFS";
@@ -113,9 +113,9 @@ namespace Dummy
             this.buttonDFS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDFS.ForeColor = System.Drawing.Color.Black;
-            this.buttonDFS.Location = new System.Drawing.Point(128, 372);
+            this.buttonDFS.Location = new System.Drawing.Point(128, 368);
             this.buttonDFS.Name = "buttonDFS";
-            this.buttonDFS.Size = new System.Drawing.Size(46, 17);
+            this.buttonDFS.Size = new System.Drawing.Size(55, 20);
             this.buttonDFS.TabIndex = 3;
             this.buttonDFS.TabStop = true;
             this.buttonDFS.Text = "DFS";
@@ -128,7 +128,7 @@ namespace Dummy
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(45, 419);
+            this.buttonSearch.Location = new System.Drawing.Point(45, 421);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(138, 52);
             this.buttonSearch.TabIndex = 4;
@@ -146,7 +146,7 @@ namespace Dummy
             this.panelHeader.Controls.Add(this.labelHeader);
             this.panelHeader.Location = new System.Drawing.Point(-1, -4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1164, 90);
+            this.panelHeader.Size = new System.Drawing.Size(1102, 90);
             this.panelHeader.TabIndex = 11;
             // 
             // pictureLogo
@@ -154,7 +154,7 @@ namespace Dummy
             this.pictureLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
-            this.pictureLogo.Location = new System.Drawing.Point(1057, 20);
+            this.pictureLogo.Location = new System.Drawing.Point(995, 20);
             this.pictureLogo.Name = "pictureLogo";
             this.pictureLogo.Size = new System.Drawing.Size(51, 53);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,9 +170,9 @@ namespace Dummy
             this.labelSubheader.BackColor = System.Drawing.Color.Transparent;
             this.labelSubheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSubheader.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.labelSubheader.Location = new System.Drawing.Point(42, 48);
+            this.labelSubheader.Location = new System.Drawing.Point(42, 54);
             this.labelSubheader.Name = "labelSubheader";
-            this.labelSubheader.Size = new System.Drawing.Size(238, 15);
+            this.labelSubheader.Size = new System.Drawing.Size(291, 18);
             this.labelSubheader.TabIndex = 12;
             this.labelSubheader.Text = "ready to search your file as fast as the wind";
             // 
@@ -185,9 +185,9 @@ namespace Dummy
             this.labelHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.labelHeader.Location = new System.Drawing.Point(39, 15);
+            this.labelHeader.Location = new System.Drawing.Point(39, 21);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(123, 26);
+            this.labelHeader.Size = new System.Drawing.Size(155, 32);
             this.labelHeader.TabIndex = 12;
             this.labelHeader.Text = "search.me";
             // 
@@ -198,7 +198,7 @@ namespace Dummy
             this.labelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInput.Location = new System.Drawing.Point(40, 126);
             this.labelInput.Name = "labelInput";
-            this.labelInput.Size = new System.Drawing.Size(39, 18);
+            this.labelInput.Size = new System.Drawing.Size(49, 22);
             this.labelInput.TabIndex = 12;
             this.labelInput.Text = "Input";
             // 
@@ -209,7 +209,7 @@ namespace Dummy
             this.labelOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOutput.Location = new System.Drawing.Point(434, 126);
             this.labelOutput.Name = "labelOutput";
-            this.labelOutput.Size = new System.Drawing.Size(52, 18);
+            this.labelOutput.Size = new System.Drawing.Size(64, 22);
             this.labelOutput.TabIndex = 13;
             this.labelOutput.Text = "Output";
             // 
@@ -220,7 +220,7 @@ namespace Dummy
             this.labelChooseFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChooseFolder.Location = new System.Drawing.Point(41, 166);
             this.labelChooseFolder.Name = "labelChooseFolder";
-            this.labelChooseFolder.Size = new System.Drawing.Size(152, 15);
+            this.labelChooseFolder.Size = new System.Drawing.Size(187, 18);
             this.labelChooseFolder.TabIndex = 14;
             this.labelChooseFolder.Text = "Choose your starting folder";
             // 
@@ -230,7 +230,7 @@ namespace Dummy
             this.labelFolderChosen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFolderChosen.Location = new System.Drawing.Point(189, 198);
             this.labelFolderChosen.Name = "labelFolderChosen";
-            this.labelFolderChosen.Size = new System.Drawing.Size(94, 13);
+            this.labelFolderChosen.Size = new System.Drawing.Size(117, 16);
             this.labelFolderChosen.TabIndex = 15;
             this.labelFolderChosen.Text = "No folder choosen";
             // 
@@ -241,7 +241,7 @@ namespace Dummy
             this.labelInputFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInputFilename.Location = new System.Drawing.Point(41, 248);
             this.labelInputFilename.Name = "labelInputFilename";
-            this.labelInputFilename.Size = new System.Drawing.Size(88, 15);
+            this.labelInputFilename.Size = new System.Drawing.Size(102, 18);
             this.labelInputFilename.TabIndex = 16;
             this.labelInputFilename.Text = "Input file name";
             // 
@@ -250,22 +250,11 @@ namespace Dummy
             this.labelSearchMethod.AutoSize = true;
             this.labelSearchMethod.BackColor = System.Drawing.Color.Transparent;
             this.labelSearchMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearchMethod.Location = new System.Drawing.Point(41, 348);
+            this.labelSearchMethod.Location = new System.Drawing.Point(41, 344);
             this.labelSearchMethod.Name = "labelSearchMethod";
-            this.labelSearchMethod.Size = new System.Drawing.Size(108, 15);
+            this.labelSearchMethod.Size = new System.Drawing.Size(128, 18);
             this.labelSearchMethod.TabIndex = 17;
             this.labelSearchMethod.Text = "Searching method";
-            // 
-            // buttonGraphTrial
-            // 
-            this.buttonGraphTrial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonGraphTrial.Location = new System.Drawing.Point(252, 429);
-            this.buttonGraphTrial.Name = "buttonGraphTrial";
-            this.buttonGraphTrial.Size = new System.Drawing.Size(132, 36);
-            this.buttonGraphTrial.TabIndex = 18;
-            this.buttonGraphTrial.Text = "coba graf ngab";
-            this.buttonGraphTrial.UseVisualStyleBackColor = true;
-            this.buttonGraphTrial.Click += new System.EventHandler(this.buttonGraphTrial_Click);
             // 
             // graphPanel
             // 
@@ -280,20 +269,32 @@ namespace Dummy
             this.graphPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.graphPanel.Location = new System.Drawing.Point(439, 166);
             this.graphPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.graphPanel.MaximumSize = new System.Drawing.Size(900, 600);
             this.graphPanel.Name = "graphPanel";
             this.graphPanel.RowCount = 1;
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.graphPanel.Size = new System.Drawing.Size(668, 424);
+            this.graphPanel.Size = new System.Drawing.Size(606, 384);
             this.graphPanel.TabIndex = 19;
+            // 
+            // hyperlinkLabel
+            // 
+            this.hyperlinkLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.hyperlinkLabel.AutoSize = true;
+            this.hyperlinkLabel.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hyperlinkLabel.Location = new System.Drawing.Point(436, 567);
+            this.hyperlinkLabel.Name = "hyperlinkLabel";
+            this.hyperlinkLabel.Size = new System.Drawing.Size(0, 18);
+            this.hyperlinkLabel.TabIndex = 20;
+            this.hyperlinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hyperlinkLabel_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1160, 636);
+            this.ClientSize = new System.Drawing.Size(1098, 620);
+            this.Controls.Add(this.hyperlinkLabel);
             this.Controls.Add(this.graphPanel);
-            this.Controls.Add(this.buttonGraphTrial);
             this.Controls.Add(this.labelSearchMethod);
             this.Controls.Add(this.labelInputFilename);
             this.Controls.Add(this.labelFolderChosen);
@@ -307,7 +308,9 @@ namespace Dummy
             this.Controls.Add(this.buttonChooseFolder);
             this.Controls.Add(this.textboxInputFilename);
             this.Controls.Add(this.panelHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(900, 550);
             this.Name = "Form1";
             this.Text = "search.me";
@@ -336,8 +339,8 @@ namespace Dummy
         private System.Windows.Forms.Label labelFolderChosen;
         private System.Windows.Forms.Label labelInputFilename;
         private System.Windows.Forms.Label labelSearchMethod;
-        private System.Windows.Forms.Button buttonGraphTrial;
         private System.Windows.Forms.TableLayoutPanel graphPanel;
+        private System.Windows.Forms.LinkLabel hyperlinkLabel;
     }
 }
 
