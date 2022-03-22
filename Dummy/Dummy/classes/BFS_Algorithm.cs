@@ -88,9 +88,9 @@ namespace Dummy.classes
             while(queue.Count != 0)
             {
                 string path = queue.Dequeue();
-                visited.Enqueue(path);
                 // Make a reference to a directory.
                 DirectoryInfo parentDir = new DirectoryInfo(path);
+                visited.Enqueue(path);
                 
                 if (parentDir.Extension.Length != 0)
                 {
@@ -113,14 +113,12 @@ namespace Dummy.classes
                     {
                         prefix = path;
                     }
-
                     fillWereInQueue(prefix, path);
 
                     foreach (FileInfo file in files)
                     {
                         // casting FileInfo type to String
                         string stringFile = Convert.ToString(file);
-
                         if (!visited.Contains(prefix + stringFile))
                         {
                             queue.Enqueue(prefix + stringFile);
@@ -132,7 +130,6 @@ namespace Dummy.classes
                     {
                         // casting DirectoryInfo type to String
                         string stringDirectory = Convert.ToString(directory);
-
                         if (!visited.Contains(prefix + stringDirectory))
                         {
                             queue.Enqueue(prefix + stringDirectory);
@@ -147,7 +144,6 @@ namespace Dummy.classes
         public bool searchAllOccurence ()
         {
             Queue<string> queue = new Queue<string>();
-            // inisialisasi queue dgn nilai dari root path
             queue.Enqueue(rootPath);
             visited.Enqueue(rootPath);
             wereInQueue.Enqueue(rootPath);
@@ -155,49 +151,42 @@ namespace Dummy.classes
             while (queue.Count != 0)
             {
                 string path = queue.Dequeue();
-                // menambahkan prefix path + '\' utk folder atau file terkini (yg sedang di cek) atau
-                // tidak menambahkan prefix bila path = 'C:\'
-                string prefix = path + "\\";
-                if (path.Equals("C:\\"))
-                {
-                    prefix = path;
-                }
-
-                // Make a reference to a directory.
                 DirectoryInfo parentDir = new DirectoryInfo(path);
-                // Get a reference to each file in that parent directory.
-                FileInfo[] files = parentDir.GetFiles();
-                // Get a reference to each directory in that parent directory.
-                DirectoryInfo[] directories = parentDir.GetDirectories();
+                visited.Enqueue(path);
 
-                fillWereInQueue(prefix, path);
-
-                // iterasi setiap file pada parent directory
-                foreach (FileInfo file in files)
+                if (parentDir.Extension.Length != 0)
                 {
-                    // casting FileInfo type to String
-                    string stringFile = Convert.ToString(file);
-
-                    if (!visited.Contains(prefix + stringFile))
+                    if ((parentDir.Name).Equals(fileTarget))
                     {
-                        visited.Enqueue(prefix + stringFile);
-                        if (stringFile.Equals(fileTarget))
-                        {
-                            finalPath.Enqueue(prefix + stringFile);
-                        }
+                        finalPath.Enqueue(parentDir.FullName);
                     }
                 }
-
-                // iterasi setiap folder pada parent directory
-                foreach (DirectoryInfo directory in directories)
+                else
                 {
-                    // casting DirectoryInfo type to String
-                    string stringDirectory = Convert.ToString(directory);
-
-                    if (!visited.Contains(prefix + stringDirectory))
+                    FileInfo[] files = parentDir.GetFiles();
+                    DirectoryInfo[] directories = parentDir.GetDirectories();
+                    string prefix = path + "\\";
+                    if (path.Equals("C:\\"))
                     {
-                        visited.Enqueue(prefix + stringDirectory);
-                        queue.Enqueue(prefix + stringDirectory);
+                        prefix = path;
+                    }
+                    fillWereInQueue(prefix, path);
+
+                    foreach (FileInfo file in files)
+                    {
+                        string stringFile = Convert.ToString(file);
+                        if (!visited.Contains(prefix + stringFile))
+                        {
+                            queue.Enqueue(prefix + stringFile);
+                        }
+                    }
+                    foreach (DirectoryInfo directory in directories)
+                    {
+                        string stringDirectory = Convert.ToString(directory);
+                        if (!visited.Contains(prefix + stringDirectory))
+                        {
+                            queue.Enqueue(prefix + stringDirectory);
+                        }
                     }
                 }
             }

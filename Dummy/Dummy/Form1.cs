@@ -128,6 +128,7 @@ namespace Dummy
                     }
 
                     // GRAPH VISUALIZATION
+                    /*
                     string[] wereInQueueArray = bfs_algo.getWereInQueueArray();
                     string test = "";
                     for (int i = 0; i < wereInQueueArray.Length; i++)
@@ -135,7 +136,8 @@ namespace Dummy
                         test += wereInQueueArray[i] + "\n";
                     }
                     MessageBox.Show($"Were in queue: \n {test}");
-                    MyGraph myGraph = new MyGraph(d.rootPath, wereInQueueArray, bfs_algo.getVisitedArray(), bfs_algo.getFinalPathArray());
+                     */
+                    MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getWereInQueueArray(), bfs_algo.getVisitedArray(), bfs_algo.getFinalPathArray());
                     myGraph.buildGraph();
 
                     Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
@@ -154,10 +156,12 @@ namespace Dummy
             }
             if (!d.isBFS)
             {
+                /*
                 DirectoryInfo parentDir = new DirectoryInfo(d.rootPath);
                 FileInfo[] files = parentDir.GetFiles();
                 DirectoryInfo[] directories = parentDir.GetDirectories();
                 DirectoryInfo parentDir2 = new DirectoryInfo(d.rootPath + "\\" + Convert.ToString(files[0]));
+                
                 MessageBox.Show($"{d.rootPath}\\{Convert.ToString(files[0])}\n" +
                     $"{parentDir.Extension.Length} \n" +
                     $"{parentDir2.Extension.Length} \n" +
@@ -165,7 +169,7 @@ namespace Dummy
                     $"{files} \n" +
                     $"{directories.Length}"
                     );
-
+                 */
 
                 d.show = !d.show;
                 if (d.show)
