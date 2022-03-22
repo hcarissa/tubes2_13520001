@@ -90,17 +90,39 @@ namespace Dummy
                 // HYPERLINK
                 if (countFinalPath > 0)
                 {
-
-                    string pathText = bfs_algo_copy.finalPath.Dequeue();
-                    hyperlinkLabel.Text = pathText;
-                    hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
-                    hyperlinkLabel.LinkColor = Color.Blue;
+                    if(countFinalPath == 1)
+                    {
+                        string pathTxt = bfs_algo_copy.finalPath.Dequeue();
+                        int last = pathTxt.Length;
+                        int first = d.fileTarget.Length;
+                        string pathText = pathTxt.Remove((last - first), first);
+                        hyperlinkLabel.Text = pathText;
+                        hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
+                        hyperlinkLabel.LinkColor = Color.Blue;
+                    }
+                    else
+                    {
+                        int i = 0;
+                        multiplePath.Text = "";
+                        int counter = 0;
+                        for (i = 0; i < countFinalPath; i++)
+                        {
+                            
+                            string pathTxt = bfs_algo_copy.finalPath.Dequeue();
+                            int last = pathTxt.Length;
+                            int first = d.fileTarget.Length;
+                            string pathText = pathTxt.Remove((last - first), first);
+                            multiplePath.Text += pathText;
+                            multiplePath.Links.Add(counter, pathText.Length, pathText);
+                            counter = counter + pathText.Length;
+                            multiplePath.Text += "\n";
+                            counter += 1;
+                        }
+                    }
                 }
                 else if (countFinalPath == 0)
                 {
-                    hyperlinkLabel.Text = "File not found!";
-                    hyperlinkLabel.LinkBehavior = LinkBehavior.NeverUnderline;
-                    hyperlinkLabel.LinkColor = Color.Black;
+                    errorLabel.Text = "File not found!";
                 }
 
                 // GRAPH VISUALIZATION
@@ -119,6 +141,7 @@ namespace Dummy
                 {
                     this.graphPanel.Controls.Clear();
                     hyperlinkLabel.ResetText();
+                    errorLabel.ResetText();
                 }
             }
             if (!d.isBFS)
@@ -135,16 +158,17 @@ namespace Dummy
                 if (countFinalPath > 0)
                 {
 
-                    string pathText = dfs_algo_copy.finalPath.Dequeue();
+                    string pathTxt = dfs_algo_copy.finalPath.Dequeue();
+                    int last = pathTxt.Length;
+                    int first = d.fileTarget.Length;
+                    string pathText = pathTxt.Remove((last - first), first);
                     hyperlinkLabel.Text = pathText;
                     hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
                     hyperlinkLabel.LinkColor = Color.Blue;
                 }
                 else if (countFinalPath == 0)
                 {
-                    hyperlinkLabel.Text = "File not found!";
-                    hyperlinkLabel.LinkBehavior = LinkBehavior.NeverUnderline;                 
-                    hyperlinkLabel.LinkColor = Color.Black;
+                    errorLabel.Text = "File not found!";
                 }
 
                 // GRAPH VISUALIZATION
@@ -163,7 +187,9 @@ namespace Dummy
                 else
                 {
                     this.graphPanel.Controls.Clear(); 
-                    hyperlinkLabel.ResetText(); }
+                    hyperlinkLabel.ResetText();
+                    errorLabel.ResetText();
+                }
             }
 
             // Find all nodes in root path
@@ -196,15 +222,14 @@ namespace Dummy
             if (d.isBFS)
             {
                 BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
-                isFound = bfs_algo.BFS_search();                
+                isFound = bfs_algo.BFS_search();
                 if (isFound)
                 {
-                    string finalPath = bfs_algo.finalPath.Dequeue();
+                    string pathTxt = bfs_algo.finalPath.Dequeue();
+                    int last = pathTxt.Length;
+                    int first = d.fileTarget.Length;
+                    string finalPath = pathTxt.Remove((last - first), first);
                     Process.Start(finalPath);
-                }
-                else
-                {
-                    
                 }
             }
             else if (!d.isBFS)
@@ -213,14 +238,19 @@ namespace Dummy
                 isFound = dfs_algo.DFS_search(d.rootPath);
                 if (isFound)
                 {
-                    string finalPath = dfs_algo.finalPath.Dequeue();
+                    string pathTxt = dfs_algo.finalPath.Dequeue();
+                    int last = pathTxt.Length;
+                    int first = d.fileTarget.Length;
+                    string finalPath = pathTxt.Remove((last - first), first);
                     Process.Start(finalPath);
                 }
-                else
-                {
-                    
-                }
             }
+        }
+
+        private void multiplePath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string target = e.Link.LinkData as string;
+            Process.Start(target);
         }
     }
 }

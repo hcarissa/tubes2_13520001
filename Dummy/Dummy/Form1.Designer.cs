@@ -48,6 +48,8 @@ namespace Dummy
             this.labelSearchMethod = new System.Windows.Forms.Label();
             this.graphPanel = new System.Windows.Forms.TableLayoutPanel();
             this.hyperlinkLabel = new System.Windows.Forms.LinkLabel();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.multiplePath = new System.Windows.Forms.LinkLabel();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
@@ -274,25 +276,46 @@ namespace Dummy
             this.graphPanel.RowCount = 1;
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.graphPanel.Size = new System.Drawing.Size(606, 384);
+            this.graphPanel.Size = new System.Drawing.Size(606, 428);
             this.graphPanel.TabIndex = 19;
             // 
             // hyperlinkLabel
             // 
             this.hyperlinkLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.hyperlinkLabel.AutoSize = true;
-            this.hyperlinkLabel.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hyperlinkLabel.Location = new System.Drawing.Point(436, 567);
+            this.hyperlinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hyperlinkLabel.Location = new System.Drawing.Point(436, 611);
             this.hyperlinkLabel.Name = "hyperlinkLabel";
-            this.hyperlinkLabel.Size = new System.Drawing.Size(0, 18);
+            this.hyperlinkLabel.Size = new System.Drawing.Size(0, 25);
             this.hyperlinkLabel.TabIndex = 20;
             this.hyperlinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hyperlinkLabel_LinkClicked);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.BackColor = System.Drawing.Color.Transparent;
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.Location = new System.Drawing.Point(436, 565);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 18);
+            this.errorLabel.TabIndex = 21;
+            // 
+            // multiplePath
+            // 
+            this.multiplePath.AutoSize = true;
+            this.multiplePath.Location = new System.Drawing.Point(436, 611);
+            this.multiplePath.Name = "multiplePath";
+            this.multiplePath.Size = new System.Drawing.Size(0, 16);
+            this.multiplePath.TabIndex = 22;
+            this.multiplePath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.multiplePath_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1098, 620);
+            this.ClientSize = new System.Drawing.Size(1098, 664);
+            this.Controls.Add(this.multiplePath);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.hyperlinkLabel);
             this.Controls.Add(this.graphPanel);
             this.Controls.Add(this.labelSearchMethod);
@@ -341,6 +364,8 @@ namespace Dummy
         private System.Windows.Forms.Label labelSearchMethod;
         private System.Windows.Forms.TableLayoutPanel graphPanel;
         private System.Windows.Forms.LinkLabel hyperlinkLabel;
+        private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.LinkLabel multiplePath;
     }
 }
 
