@@ -9,7 +9,7 @@ namespace Dummy.classes
 {
     class BFS_Algorithm
     {
-        public Queue<string> queue;
+        public Queue<string> wereInQueue;
         public Queue<string> visited;
         public Queue<string> finalPath;
         public string rootPath;
@@ -18,7 +18,7 @@ namespace Dummy.classes
 
         public BFS_Algorithm (string rootPathIn, string fileTargetIn, bool findAllOccurenceIn)
         {
-            queue = new Queue<string>();
+            wereInQueue = new Queue<string>();
             visited = new Queue<string>();
             finalPath = new Queue<string>();
             rootPath = rootPathIn;
@@ -48,12 +48,42 @@ namespace Dummy.classes
             return strArray;
         }
 
+        public void fillWereInQueue(string prefix, string path) 
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            FileInfo[] files = directoryInfo.GetFiles();
+            DirectoryInfo[] directories = directoryInfo.GetDirectories();
+            foreach (FileInfo file in files)
+            {
+                string stringFile = Convert.ToString(file);
+                wereInQueue.Enqueue(prefix + stringFile);
+            }
+            foreach (DirectoryInfo directory in directories)
+            {
+                string stringDirectory = Convert.ToString(directory);
+                wereInQueue.Enqueue(prefix + stringDirectory);
+            }
+        }
+
+        public string[] getWereInQueueArray()
+        {
+            int qLength = wereInQueue.Count;
+            string[] strArray = new string[qLength];
+            for (int i = 0; i < qLength; i++)
+            {
+                strArray[i] = wereInQueue.Dequeue();
+            }
+            return strArray;
+        }
+
         // mencari satu kejadian file ditemukan
         public bool searchOneOccurence ()
         {
+            Queue<string> queue = new Queue<string>();
             // inisialisasi queue dgn nilai dari root path
             queue.Enqueue(rootPath);
             visited.Enqueue(rootPath);
+            wereInQueue.Enqueue(rootPath);
 
             while(queue.Count != 0)
             {
@@ -71,6 +101,11 @@ namespace Dummy.classes
                 // Get a reference to each file in that parent directory.
                 FileInfo[] files = parentDir.GetFiles();
                 // iterasi setiap file pada parent directory
+                // Get a reference to each directory in that parent directory.
+                DirectoryInfo[] directories = parentDir.GetDirectories();
+                
+                fillWereInQueue(prefix, path);
+
                 foreach (FileInfo file in files) 
                 {
                     // casting FileInfo type to String
@@ -87,8 +122,6 @@ namespace Dummy.classes
                     }
                 }
 
-                // Get a reference to each directory in that parent directory.
-                DirectoryInfo[] directories = parentDir.GetDirectories();
                 // iterasi setiap folder pada parent directory
                 foreach (DirectoryInfo directory in directories) 
                 {
@@ -108,9 +141,11 @@ namespace Dummy.classes
         // mencari semua kejadian file ditemukan
         public bool searchAllOccurence ()
         {
+            Queue<string> queue = new Queue<string>();
             // inisialisasi queue dgn nilai dari root path
             queue.Enqueue(rootPath);
             visited.Enqueue(rootPath);
+            wereInQueue.Enqueue(rootPath);
 
             while (queue.Count != 0)
             {
@@ -129,6 +164,8 @@ namespace Dummy.classes
                 FileInfo[] files = parentDir.GetFiles();
                 // Get a reference to each directory in that parent directory.
                 DirectoryInfo[] directories = parentDir.GetDirectories();
+
+                fillWereInQueue(prefix, path);
 
                 // iterasi setiap file pada parent directory
                 foreach (FileInfo file in files)

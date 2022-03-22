@@ -127,9 +127,8 @@ namespace Dummy
                         errorLabel.Text = "File not found!";
                     }
 
-
                     // GRAPH VISUALIZATION
-                    MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getFinalPathArray(), bfs_algo.getVisitedArray());
+                    MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getWereInQueueArray(), bfs_algo.getVisitedArray(), bfs_algo.getFinalPathArray());
                     myGraph.buildGraph();
 
                     Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
@@ -198,14 +197,14 @@ namespace Dummy
                     }
 
                     // GRAPH VISUALIZATION
-                    MyGraph myGraph = new MyGraph(d.rootPath, dfs_algo.getFinalPathArray(), dfs_algo.getVisitedArray());
+                    string[] wereInQueueArray = dfs_algo.getVisitedArray();
+                    MyGraph myGraph = new MyGraph(d.rootPath, wereInQueueArray, wereInQueueArray, dfs_algo.getFinalPathArray());
                     myGraph.buildGraph();
 
                     Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
                     viewer.Graph = myGraph.graph;
                     viewer.OutsideAreaBrush = Brushes.White;
                     this.graphPanel.Controls.Add(viewer);
-
                 }
                 else
                 {
