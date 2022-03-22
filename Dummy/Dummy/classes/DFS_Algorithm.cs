@@ -59,6 +59,7 @@ namespace Dummy.classes
                 {
                     // if found, add path to finalpath
                     finalPath.Enqueue(curDir +"\\"+ fileName);
+                    visitedFolders.Enqueue(curDir + "\\" + fileName);
                     if (findAllOccurence)
                     {
                         found = true;
@@ -87,10 +88,14 @@ namespace Dummy.classes
             // if have to find all occurence
             if (findAllOccurence)
             {
-                //find file in diir
+                //find file in dir
                 if (isFileHere(path))
                 {
                     found = true;
+                    foreach (DirectoryInfo dirs in dirArray)
+                    {
+                        found = DFS_search(path + "\\" + dirs.ToString());
+                    }
                 }
                 else
                 {

@@ -79,62 +79,62 @@ namespace Dummy
 
             if (d.isBFS)
             {
-                // TESTING BFS
-                BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
-                BFS_Algorithm bfs_algo_copy = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
-                isFound = bfs_algo.BFS_search();
-                isFoundCopy = bfs_algo_copy.BFS_search();
-                countVisited = bfs_algo.visited.Count;
-                countFinalPath = bfs_algo.finalPath.Count;
+                d.show = !d.show;
+                if (d.show) {
+                    // TESTING BFS
+                    BFS_Algorithm bfs_algo = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
+                    BFS_Algorithm bfs_algo_copy = new BFS_Algorithm(d.rootPath, d.fileTarget, d.isAllOccurence);
+                    isFound = bfs_algo.BFS_search();
+                    isFoundCopy = bfs_algo_copy.BFS_search();
+                    countVisited = bfs_algo.visited.Count;
+                    countFinalPath = bfs_algo.finalPath.Count;
 
-                // HYPERLINK
-                if (countFinalPath > 0)
-                {
-                    if(countFinalPath == 1)
+                    // HYPERLINK
+                    if (countFinalPath > 0)
                     {
-                        string pathTxt = bfs_algo_copy.finalPath.Dequeue();
-                        int last = pathTxt.Length;
-                        int first = d.fileTarget.Length;
-                        string pathText = pathTxt.Remove((last - first), first);
-                        hyperlinkLabel.Text = pathText;
-                        hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
-                        hyperlinkLabel.LinkColor = Color.Blue;
-                    }
-                    else
-                    {
-                        int i = 0;
-                        multiplePath.Text = "";
-                        int counter = 0;
-                        for (i = 0; i < countFinalPath; i++)
+                        if (countFinalPath == 1)
                         {
-                            
                             string pathTxt = bfs_algo_copy.finalPath.Dequeue();
                             int last = pathTxt.Length;
                             int first = d.fileTarget.Length;
                             string pathText = pathTxt.Remove((last - first), first);
-                            multiplePath.Text += pathText;
-                            multiplePath.Links.Add(counter, pathText.Length, pathText);
-                            counter = counter + pathText.Length;
-                            multiplePath.Text += "\n";
-                            counter += 1;
+                            hyperlinkLabel.Text = pathText;
+                            hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
+                            hyperlinkLabel.LinkColor = Color.Blue;
+                        }
+                        else
+                        {
+                            int i = 0;
+                            multiplePath.Text = "";
+                            int counter = 0;
+                            for (i = 0; i < countFinalPath; i++)
+                            {
+
+                                string pathTxt = bfs_algo_copy.finalPath.Dequeue();
+                                int last = pathTxt.Length;
+                                int first = d.fileTarget.Length;
+                                string pathText = pathTxt.Remove((last - first), first);
+                                multiplePath.Text += pathText;
+                                multiplePath.Links.Add(counter, pathText.Length, pathText);
+                                counter = counter + pathText.Length;
+                                multiplePath.Text += "\n";
+                                counter += 1;
+                            }
                         }
                     }
-                }
-                else if (countFinalPath == 0)
-                {
-                    errorLabel.Text = "File not found!";
-                }
+                    else if (countFinalPath == 0)
+                    {
+                        errorLabel.Text = "File not found!";
+                    }
 
-                // GRAPH VISUALIZATION
-                MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getFinalPathArray(), bfs_algo.getVisitedArray());
-                myGraph.buildGraph();
 
-                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-                viewer.Graph = myGraph.graph;
-                viewer.OutsideAreaBrush = Brushes.White;
+                    // GRAPH VISUALIZATION
+                    MyGraph myGraph = new MyGraph(d.rootPath, bfs_algo.getFinalPathArray(), bfs_algo.getVisitedArray());
+                    myGraph.buildGraph();
 
-                d.show = !d.show;
-                if (d.show) {
+                    Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                    viewer.Graph = myGraph.graph;
+                    viewer.OutsideAreaBrush = Brushes.White;
                     this.graphPanel.Controls.Add(viewer);
                 }
                 else
@@ -142,69 +142,94 @@ namespace Dummy
                     this.graphPanel.Controls.Clear();
                     hyperlinkLabel.ResetText();
                     errorLabel.ResetText();
+                    multiplePath.ResetText();
+                    multiplePath.Links.Clear();
                 }
             }
             if (!d.isBFS)
-            {
-                // TESTING DFS
-                DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
-                DFS_Algorithm dfs_algo_copy = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
-                isFound = dfs_algo.DFS_search(d.rootPath);
-                isFoundCopy = dfs_algo_copy.DFS_search(d.rootPath);
-                countVisited = dfs_algo.visitedFolders.Count;
-                countFinalPath = dfs_algo.finalPath.Count;
-
-                // HYPERLINK
-                if (countFinalPath > 0)
-                {
-
-                    string pathTxt = dfs_algo_copy.finalPath.Dequeue();
-                    int last = pathTxt.Length;
-                    int first = d.fileTarget.Length;
-                    string pathText = pathTxt.Remove((last - first), first);
-                    hyperlinkLabel.Text = pathText;
-                    hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
-                    hyperlinkLabel.LinkColor = Color.Blue;
-                }
-                else if (countFinalPath == 0)
-                {
-                    errorLabel.Text = "File not found!";
-                }
-
-                // GRAPH VISUALIZATION
-                MyGraph myGraph = new MyGraph(d.rootPath, dfs_algo.getFinalPathArray(), dfs_algo.getVisitedArray());
-                myGraph.buildGraph();
-
-                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
-                viewer.Graph = myGraph.graph;
-                viewer.OutsideAreaBrush = Brushes.White;
-
+            {   
                 d.show = !d.show;
                 if (d.show)
                 {
+                    // TESTING DFS
+                    DFS_Algorithm dfs_algo = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
+                    DFS_Algorithm dfs_algo_copy = new DFS_Algorithm(d.fileTarget, d.rootPath, d.isAllOccurence);
+                    isFound = dfs_algo.DFS_search(d.rootPath);
+                    isFoundCopy = dfs_algo_copy.DFS_search(d.rootPath);
+                    countVisited = dfs_algo.visitedFolders.Count;
+                    countFinalPath = dfs_algo.finalPath.Count;
+
+                    // HYPERLINK
+                    if (countFinalPath > 0)
+                    {
+                        if (countFinalPath == 1)
+                        {
+                            string pathTxt = dfs_algo_copy.finalPath.Dequeue();
+                            int last = pathTxt.Length;
+                            int first = d.fileTarget.Length;
+                            string pathText = pathTxt.Remove((last - first), first);
+                            hyperlinkLabel.Text = pathText;
+                            hyperlinkLabel.LinkBehavior = LinkBehavior.HoverUnderline;
+                            hyperlinkLabel.LinkColor = Color.Blue;
+                        }
+                        else
+                        {
+                            int i = 0;
+                            multiplePath.Text = "";
+                            int counter = 0;
+                            for (i = 0; i < countFinalPath; i++)
+                            {
+
+                                string pathTxt = dfs_algo_copy.finalPath.Dequeue();
+                                int last = pathTxt.Length;
+                                int first = d.fileTarget.Length;
+                                string pathText = pathTxt.Remove((last - first), first);
+                                multiplePath.Text += pathText;
+                                multiplePath.Links.Add(counter, pathText.Length, pathText);
+                                counter = counter + pathText.Length;
+                                multiplePath.Text += "\n";
+                                counter += 1;
+                            }
+                        }
+                    }
+                    else if (countFinalPath == 0)
+                    {
+                        errorLabel.Text = "File not found!";
+                    }
+
+                    // GRAPH VISUALIZATION
+                    MyGraph myGraph = new MyGraph(d.rootPath, dfs_algo.getFinalPathArray(), dfs_algo.getVisitedArray());
+                    myGraph.buildGraph();
+
+                    Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                    viewer.Graph = myGraph.graph;
+                    viewer.OutsideAreaBrush = Brushes.White;
                     this.graphPanel.Controls.Add(viewer);
+
                 }
                 else
                 {
                     this.graphPanel.Controls.Clear(); 
                     hyperlinkLabel.ResetText();
                     errorLabel.ResetText();
+                    multiplePath.ResetText();
+                    multiplePath.Links.Clear();
                 }
             }
 
             // Find all nodes in root path
             /*
-             DirectoryInfo di = new DirectoryInfo(d.rootPath);
+            DirectoryInfo di = new DirectoryInfo(d.rootPath);
             int countNode = d.allNodes.Count();
             String allnode = "";
             for (int i = 0; i < countNode; i++) { allnode += d.allNodes.Dequeue() + "\n"; }
-             */
+             
 
-            /*
+            
              MessageBox.Show($"root path: {d.rootPath}\n"  +
                     // $"file target: {d.fileTarget}\n" +
                     // $"is all occurence: {d.isAllOccurence}\n" +
-                    // $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
+                     $"algorithm used: " + d.whichAlgo(d.isBFS) + "\n ===\n" +
                     //folders + "=== \n" +
 
                     // DRIVER TESTING BFS/DFS
@@ -213,7 +238,8 @@ namespace Dummy
                     $"Final path: {countFinalPath}\n{finalPath}" +
                     $"Found is: {isFound}\n"
                 );   
-             */
+            */
+             
         }
 
         private void hyperlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

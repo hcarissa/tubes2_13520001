@@ -294,10 +294,10 @@ namespace Dummy
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.BackColor = System.Drawing.Color.Transparent;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.Location = new System.Drawing.Point(436, 565);
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.Location = new System.Drawing.Point(436, 609);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 18);
+            this.errorLabel.Size = new System.Drawing.Size(0, 25);
             this.errorLabel.TabIndex = 21;
             // 
             // multiplePath
