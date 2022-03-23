@@ -62,23 +62,6 @@ namespace Dummy.classes
             return strArray;
         }
 
-        public void fillWereInQueue(string prefix, string path) 
-        {
-            DirectoryInfo directoryInfo = new DirectoryInfo(path);
-            FileInfo[] files = directoryInfo.GetFiles();
-            DirectoryInfo[] directories = directoryInfo.GetDirectories();
-            foreach (FileInfo file in files)
-            {
-                string stringFile = Convert.ToString(file);
-                wereInQueue.Enqueue(prefix + stringFile);
-            }
-            foreach (DirectoryInfo directory in directories)
-            {
-                string stringDirectory = Convert.ToString(directory);
-                wereInQueue.Enqueue(prefix + stringDirectory);
-            }
-        }
-
         public string[] getWereInQueueArray()
         {
             int qLength = wereInQueue.Count;
@@ -123,11 +106,10 @@ namespace Dummy.classes
                     // menambahkan prefix path + '\' utk folder atau file terkini (yg sedang di cek) atau
                     // tidak menambahkan prefix bila path = 'C:\'
                     string prefix = path + "\\";
-                    if (path.Equals("C:\\"))
+                    if ((path[path.Length-1]).Equals('\\'))
                     {
                         prefix = path;
                     }
-                    fillWereInQueue(prefix, path);
 
                     foreach (FileInfo file in files)
                     {
@@ -136,6 +118,7 @@ namespace Dummy.classes
                         if (!visited.Contains(prefix + stringFile))
                         {
                             queue.Enqueue(prefix + stringFile);
+                            wereInQueue.Enqueue(prefix + stringFile);
                         }
                     }
 
@@ -147,6 +130,7 @@ namespace Dummy.classes
                         if (!visited.Contains(prefix + stringDirectory))
                         {
                             queue.Enqueue(prefix + stringDirectory);
+                            wereInQueue.Enqueue(prefix + stringDirectory);
                         }
                     }
                 }
@@ -180,11 +164,10 @@ namespace Dummy.classes
                     FileInfo[] files = parentDir.GetFiles();
                     DirectoryInfo[] directories = parentDir.GetDirectories();
                     string prefix = path + "\\";
-                    if (path.Equals("C:\\"))
+                    if ((path[path.Length - 1]).Equals('\\'))
                     {
                         prefix = path;
                     }
-                    fillWereInQueue(prefix, path);
 
                     foreach (FileInfo file in files)
                     {
@@ -192,6 +175,7 @@ namespace Dummy.classes
                         if (!visited.Contains(prefix + stringFile))
                         {
                             queue.Enqueue(prefix + stringFile);
+                            wereInQueue.Enqueue(prefix + stringFile);
                         }
                     }
                     foreach (DirectoryInfo directory in directories)
@@ -200,6 +184,7 @@ namespace Dummy.classes
                         if (!visited.Contains(prefix + stringDirectory))
                         {
                             queue.Enqueue(prefix + stringDirectory);
+                            wereInQueue.Enqueue(prefix + stringDirectory);
                         }
                     }
                 }

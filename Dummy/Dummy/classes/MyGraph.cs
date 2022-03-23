@@ -33,7 +33,7 @@ namespace Dummy.classes
             {
                 string path = queue.Dequeue();
                 string prefix = path + "\\";
-                if (path.Equals("C:\\"))
+                if ((path[path.Length - 1]).Equals('\\'))
                 {
                     prefix = path;
                 }

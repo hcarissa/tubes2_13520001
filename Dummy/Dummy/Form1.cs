@@ -29,7 +29,6 @@ namespace Dummy
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 myController.setRootPath(dialog.FileName);
-                // myController.rootPath = dialog.FileName;
                 buttonChooseFolder.Text = myController.getRootPath();
             }
             labelFolderChosen.Text = "Folder chosen!";
@@ -38,7 +37,6 @@ namespace Dummy
         private void fileNameInput_TextChanged(object sender, EventArgs e)
         {
             myController.setFileTarget(textboxInputFilename.Text);
-            // myController.fileTarget = textboxInputFilename.Text;
         }
 
         private void findAllCheck_CheckedChanged(object sender, EventArgs e)
@@ -46,12 +44,10 @@ namespace Dummy
             if (myController.getIsAllOccurence())
             {
                 myController.setIsAllOccurence(false);
-                // myController.isAllOccurence = true;
             }
             else
             {
                 myController.setIsAllOccurence(true);
-                // myController.isAllOccurence = false;
             }
         }
 
@@ -72,6 +68,7 @@ namespace Dummy
             bool isFound = false;
             bool isFoundCopy = false;
             Stopwatch sw = new Stopwatch();
+
             if (myController.getRootPath().Length == 0) 
             {
                 MessageBox.Show(
