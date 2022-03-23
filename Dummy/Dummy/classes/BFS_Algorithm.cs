@@ -9,12 +9,12 @@ namespace Dummy.classes
 {
     class BFS_Algorithm
     {
-        public Queue<string> wereInQueue;
-        public Queue<string> visited;
-        public Queue<string> finalPath;
-        public string rootPath;
-        public string fileTarget;
-        public bool findAllOccurence;
+        private Queue<string> wereInQueue;
+        private Queue<string> visited;
+        private Queue<string> finalPath;
+        private string rootPath;
+        private string fileTarget;
+        private bool findAllOccurence;
 
         public BFS_Algorithm (string rootPathIn, string fileTargetIn, bool findAllOccurenceIn)
         {
@@ -24,6 +24,20 @@ namespace Dummy.classes
             rootPath = rootPathIn;
             fileTarget = fileTargetIn;
             findAllOccurence = findAllOccurenceIn;
+        }
+
+        public int getVisitedCount()
+        {
+            return visited.Count;
+        }
+        public int getFinalPathCount()
+        {
+            return finalPath.Count;
+        }
+
+        public Queue<string> getFinalPathQueue()
+        {
+            return finalPath;
         }
 
         public string[] getVisitedArray ()

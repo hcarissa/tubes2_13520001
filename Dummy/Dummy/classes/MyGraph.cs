@@ -9,11 +9,11 @@ namespace Dummy.classes
 {
     class MyGraph
     {
-        public string rootPath;
-        public string[] wereInQueue;
-        public string[] visitedPath;
-        public string[] finalPath;
-        public Microsoft.Msagl.Drawing.Graph graph;
+        private string rootPath;
+        private string[] wereInQueue;
+        private string[] visitedPath;
+        private string[] finalPath;
+        private Microsoft.Msagl.Drawing.Graph graph;
 
         public MyGraph (string rootPathIn, string[] wereInQueueIn, string[] visitedPathIn, string[] finalPathIn)
         {
@@ -141,6 +141,11 @@ namespace Dummy.classes
             {
                 graph.FindNode(rootPath).Label.FontColor = Microsoft.Msagl.Drawing.Color.Red;
             }
+        }
+
+        public Microsoft.Msagl.Drawing.Graph getGraph()
+        {
+            return graph;
         }
 
         public bool isWereInQueueContain (string value)

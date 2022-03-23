@@ -9,11 +9,11 @@ namespace Dummy.classes
 {
     internal class DFS_Algorithm
     {
-        public Queue<string> visitedFolders;
-        public Queue<string> finalPath;
-        public string FileTarget;
-        public string rootPath;
-        public bool findAllOccurence;
+        private Queue<string> visitedFolders;
+        private Queue<string> finalPath;
+        private string FileTarget;
+        private string rootPath;
+        private bool findAllOccurence;
 
         public DFS_Algorithm(string FileTargetIn, string rootPathIn, bool findAllOccurenceIn)
         {
@@ -24,6 +24,22 @@ namespace Dummy.classes
             findAllOccurence = findAllOccurenceIn;
 
         }
+
+        public int getVisitedFoldersCount()
+        {
+            return visitedFolders.Count;
+        }
+
+        public int getFinalPathCount()
+        {
+            return finalPath.Count;
+        }
+
+        public Queue<string> getFinalPathQueue()
+        {
+            return finalPath;
+        }
+        
         public string[] getVisitedArray()
         {
             int qLength = visitedFolders.Count;
