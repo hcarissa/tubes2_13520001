@@ -50,6 +50,7 @@ namespace Dummy
             this.hyperlinkLabel = new System.Windows.Forms.LinkLabel();
             this.errorLabel = new System.Windows.Forms.Label();
             this.multiplePath = new System.Windows.Forms.LinkLabel();
+            this.timeLabel = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +131,7 @@ namespace Dummy
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(45, 421);
+            this.buttonSearch.Location = new System.Drawing.Point(44, 421);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(138, 52);
             this.buttonSearch.TabIndex = 4;
@@ -268,7 +269,6 @@ namespace Dummy
             this.graphPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F);
-            this.graphPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.graphPanel.Location = new System.Drawing.Point(439, 166);
             this.graphPanel.Margin = new System.Windows.Forms.Padding(0);
             this.graphPanel.MaximumSize = new System.Drawing.Size(900, 600);
@@ -276,17 +276,18 @@ namespace Dummy
             this.graphPanel.RowCount = 1;
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.graphPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.graphPanel.Size = new System.Drawing.Size(606, 428);
+            this.graphPanel.Size = new System.Drawing.Size(606, 461);
             this.graphPanel.TabIndex = 19;
             // 
             // hyperlinkLabel
             // 
             this.hyperlinkLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.hyperlinkLabel.AutoSize = true;
-            this.hyperlinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hyperlinkLabel.Location = new System.Drawing.Point(436, 611);
+            this.hyperlinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hyperlinkLabel.Location = new System.Drawing.Point(40, 478);
+            this.hyperlinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hyperlinkLabel.Name = "hyperlinkLabel";
-            this.hyperlinkLabel.Size = new System.Drawing.Size(0, 25);
+            this.hyperlinkLabel.Size = new System.Drawing.Size(0, 20);
             this.hyperlinkLabel.TabIndex = 20;
             this.hyperlinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hyperlinkLabel_LinkClicked);
             // 
@@ -294,26 +295,37 @@ namespace Dummy
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.BackColor = System.Drawing.Color.Transparent;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.Location = new System.Drawing.Point(436, 609);
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.Location = new System.Drawing.Point(39, 478);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 25);
+            this.errorLabel.Size = new System.Drawing.Size(0, 20);
             this.errorLabel.TabIndex = 21;
             // 
             // multiplePath
             // 
             this.multiplePath.AutoSize = true;
-            this.multiplePath.Location = new System.Drawing.Point(436, 611);
+            this.multiplePath.Location = new System.Drawing.Point(42, 483);
             this.multiplePath.Name = "multiplePath";
             this.multiplePath.Size = new System.Drawing.Size(0, 16);
             this.multiplePath.TabIndex = 22;
             this.multiplePath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.multiplePath_LinkClicked);
             // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(435, 637);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(0, 20);
+            this.timeLabel.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1098, 664);
+            this.ClientSize = new System.Drawing.Size(1098, 677);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.multiplePath);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.hyperlinkLabel);
@@ -331,7 +343,7 @@ namespace Dummy
             this.Controls.Add(this.buttonChooseFolder);
             this.Controls.Add(this.textboxInputFilename);
             this.Controls.Add(this.panelHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(900, 550);
@@ -366,6 +378,7 @@ namespace Dummy
         private System.Windows.Forms.LinkLabel hyperlinkLabel;
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.LinkLabel multiplePath;
+        private System.Windows.Forms.Label timeLabel;
     }
 }
 

@@ -71,7 +71,7 @@ namespace Dummy
             int countFinalPath = 0;
             bool isFound = false;
             bool isFoundCopy = false;
-
+            Stopwatch sw = new Stopwatch();
             if (myController.getRootPath().Length == 0) 
             {
                 MessageBox.Show(
@@ -88,7 +88,9 @@ namespace Dummy
                         // TESTING BFS
                         BFS_Algorithm bfs_algo = new BFS_Algorithm(myController.getRootPath(), myController.getFileTarget(), myController.getIsAllOccurence());
                         BFS_Algorithm bfs_algo_copy = new BFS_Algorithm(myController.getRootPath(), myController.getFileTarget(), myController.getIsAllOccurence());
+                        sw.Start();
                         isFound = bfs_algo.BFS_search();
+                        sw.Stop();
                         isFoundCopy = bfs_algo_copy.BFS_search();
                         countVisited = bfs_algo.getVisitedCount();
                         countFinalPath = bfs_algo.getFinalPathCount();
@@ -131,7 +133,7 @@ namespace Dummy
                         {
                             errorLabel.Text = "File not found!";
                         }
-
+                        timeLabel.Text = "Elapsed Time is " + sw.ElapsedMilliseconds + " ms";
                         // GRAPH VISUALIZATION
                         MyGraph myGraph = new MyGraph(myController.getRootPath(), bfs_algo.getWereInQueueArray(), bfs_algo.getVisitedArray(), bfs_algo.getFinalPathArray());
                         myGraph.buildGraph();
@@ -146,7 +148,10 @@ namespace Dummy
                         // TESTING DFS
                         DFS_Algorithm dfs_algo = new DFS_Algorithm(myController.getFileTarget(), myController.getRootPath(), myController.getIsAllOccurence());
                         DFS_Algorithm dfs_algo_copy = new DFS_Algorithm(myController.getFileTarget(), myController.getRootPath(), myController.getIsAllOccurence());
+                        sw.Start();
                         isFound = dfs_algo.DFS_search(myController.getRootPath());
+                        sw.Stop();
+                        timeLabel.Text = "Elapsed Time is " + sw.ElapsedMilliseconds + " ms";
                         isFoundCopy = dfs_algo_copy.DFS_search(myController.getRootPath());
                         countVisited = dfs_algo.getVisitedFoldersCount();
                         countFinalPath = dfs_algo.getFinalPathCount();
@@ -188,7 +193,6 @@ namespace Dummy
                         {
                             errorLabel.Text = "File not found!";
                         }
-
                         // GRAPH VISUALIZATION
                         string[] wereInQueueArray = dfs_algo.getVisitedArray();
                         MyGraph myGraph = new MyGraph(myController.getRootPath(), wereInQueueArray, wereInQueueArray, dfs_algo.getFinalPathArray());
@@ -207,6 +211,8 @@ namespace Dummy
                     errorLabel.ResetText();
                     multiplePath.ResetText();
                     multiplePath.Links.Clear();
+                    timeLabel.ResetText();
+                    sw.Reset();
                 }
             }             
         }
