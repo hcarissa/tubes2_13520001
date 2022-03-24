@@ -104,6 +104,12 @@ namespace Dummy.classes
             // if have to find all occurence
             if (findAllOccurence)
             {
+                isFileHere(path);
+                foreach (DirectoryInfo dirs in dirArray)
+                {
+                    found = DFS_search(path + "\\" + dirs.ToString());
+                }
+                /*
                 //find file in dir
                 if (isFileHere(path))
                 {
@@ -121,6 +127,7 @@ namespace Dummy.classes
                         found = DFS_search(path + "\\" + dirs.ToString());
                     }
                 }
+                */
             }
             else // first found
             {
